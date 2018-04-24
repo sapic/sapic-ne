@@ -1,0 +1,77 @@
+.modalBody {
+	overflow-y: scroll;
+	overflow-x: auto;
+}
+
+#modalContent.modal_frame {
+	min-width: 310px;
+	height: 600px;
+	border: 2px solid #304a66;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	background-color: black;
+}
+
+#modalContentTitleBar {
+	color: white;
+	padding: 4px 2px 4px 8px;
+	text-align: left;
+	background-color: #304a66;
+}
+
+.modalContentDismissImage {
+	position: absolute;
+	top: 5px;
+	right: -4px;
+	cursor: pointer;
+	width: 18px;
+	height: 14px;
+}
+
+#modalContentWait {
+	position: absolute;
+	top: 24px;
+	bottom: 11px;
+	right: 11px;
+	left: 11px;
+	background-color: black;
+	padding-top: 267px;
+	text-align: center;
+}
+
+#modalContentScrollbarHack {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: scroll;
+	overflow-x: auto;
+	z-index: 901;
+}
+
+#modalContentFrameContainer {
+	background-color: black;
+}
+
+.modalContent_iFrame {
+	width: 100%;
+	border: none;
+}
+
+.communityBanDialog_label {
+	width: 100px;
+	display: inline-block;
+}
+
+.communityBanDialog_data {
+	display: inline-block;
+}
+
+.communityBanDialog_row {
+	margin-bottom: 5px;
+}
+
+.communityBanDialog_description {
+	margin-top: 10px;
+}
