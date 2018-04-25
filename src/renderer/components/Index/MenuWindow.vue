@@ -10,14 +10,15 @@
       .menu__window-button(@click="$store.dispatch('getCurrentBg')")
         .menu__window-button-text Get this BG
 
-      a(href="https://discord.gg/jnqnHuX" class="menu__window-discord" target="_blank")
-        img.menu__window-discord.discord-img(
-          src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
-        )
+      .menu__window-item
+        a.menu__window-item-text(href="https://discord.gg/jnqnHuX" target="_blank")
+          img.menu__window-discord.discord-img(
+            src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
+          )
 
       .menu__window-section-container
 
-        .menu__window-button-header
+        .menu__window-button.small
           .menu__window-button-text Zoom Scale:
 
         .menu__window-scale__container
@@ -85,28 +86,16 @@ export default {
   background #363F49
   flex-shrink 0
   user-select none
+  display flex
+  flex-direction column
+  align-items center
 
   &-section-container
-    padding-top 10px
-    padding-bottom 10px
-
-  &-button-header
-    border 1px solid gray 
-    border-radius 5px
-    position relative
-    left 16px
-    width 220px
-    height 15px
-    padding 15px 10px
     margin-top 5px
-    text-align center
-    cursor default
+
 
   &-discord
-    left 8px
-    width 220px
     height 52px
-    position relative
     margin-top 5px
     border-radius 5px
 
@@ -114,15 +103,13 @@ export default {
     transition: background-color 0.25s ease
     border 1px solid gray 
     border-radius 5px
-    position relative
-    left 16px
-    width 220px
-    height 20px
-    padding 20px 10px
     cursor pointer
-    margin-top 5px
+    margin 5px 10px 0 10px
     text-align center
     transition: filter 0.25s ease
+    display flex
+    align-items center
+    justify-content center
 
     &:hover
       transition: filter 0.25s ease
@@ -131,10 +118,36 @@ export default {
       background-color #5f6873
 
     &-text
-      position relative
       bottom: 11px
       text-shadow: 0px 4px 10px black;
       color #ffffff
+      margin 15px 0
+
+    &.small
+      .menu__window-button-text
+        margin 10px 0
+  
+  &-item
+    transition: background-color 0.25s ease
+    cursor pointer
+    margin 5px 10px 0 10px
+    text-align center
+    transition: filter 0.25s ease
+    display flex
+    align-items center
+    justify-content center
+
+    &:hover
+      transition: filter 0.25s ease
+      filter: drop-shadow( 0px 3px 10px black);
+      transition: background-color 0.25s ease
+      background-color #5f6873
+
+    &-text
+      bottom: 11px
+      text-shadow: 0px 4px 10px black;
+      color #ffffff
+      margin 0
 
   &-scale
     &__container
@@ -142,8 +155,7 @@ export default {
       flex-direction row
       flex-wrap wrap
       justify-content space-between
-      padding-left 16px
-      padding-right 14px
+      padding 0 10px
 
     &__input
       display none
@@ -159,7 +171,7 @@ export default {
       cursor pointer
       margin-top 5px
       text-align center
-      width 48%
+      width 38%
       flex 0 0 auto
       padding 10px
 
