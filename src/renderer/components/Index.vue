@@ -32,9 +32,9 @@ export default {
     TitleBar,
     MenuWindow
   },
-  async asyncData ({ store }) {
+  data () {
     return {
-      animatedScale: store.state.previewScale
+      animatedScale: this.$store.state.previewScale
     }
   },
   computed: {
