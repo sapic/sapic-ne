@@ -89,8 +89,13 @@ const createStore = () => {
         state.bgSize = value
       },
       setState (state, newState) {
-        console.log('settings stte', state, newState)
         state = newState
+      },
+      setAvatar (state, avatar) {
+        state.user = {
+          ...state.user,
+          avatar: avatar
+        }
       }
     },
     actions: {
