@@ -112,6 +112,9 @@ const createStore = () => {
         let url = 'https://steam.design/raw/' + btoa(JSON.stringify(bgSaveInfo))
         shell.openExternal(url)
       },
+      openDiscord () {
+        shell.openExternal('https://discord.gg/jnqnHuX')
+      },
       randomBackground ({ commit }) {
         commit('randomBackground')
       },

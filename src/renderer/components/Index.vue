@@ -75,7 +75,7 @@ export default {
   height calc(100% - 30px)
   display flex
   flex-direction row
-  background-color black
+  background-color #363f49
 }
 
 .preview__window {
@@ -83,6 +83,8 @@ export default {
   flex 1 1 auto
   overflow-y scroll
   overflow-x hidden
+  border-top-left-radius 20px
+  background black
 }
 
 .zoom_out

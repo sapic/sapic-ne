@@ -1,7 +1,7 @@
 <template lang="pug">
   .menu__window
     .menu__window-buttons
-      .menu__window-button(@click="$store.dispatch('downloadZip')")
+      .menu__window-button.menu__window-button-download(@click="$store.dispatch('downloadZip')")
         .menu__window-button-text Download ZIP
       
       .menu__window-button(@click="$store.dispatch('randomBackground')")
@@ -9,9 +9,9 @@
       
       .menu__window-button(@click="$store.dispatch('getCurrentBg')")
         .menu__window-button-text Get this BG
-
+      
       .menu__window-item
-        a.menu__window-item-text(href="https://discord.gg/jnqnHuX" target="_blank")
+        .menu__window-item-text(@click="$store.dispatch('openDiscord')")
           img.menu__window-discord.discord-img(
             src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
           )
@@ -95,7 +95,7 @@ export default {
 
 
   &-discord
-    height 52px
+    height 55px
     margin-top 5px
     border-radius 5px
 
@@ -126,6 +126,9 @@ export default {
     &.small
       .menu__window-button-text
         margin 10px 0
+    
+    &-download
+     background linear-gradient( to bottom, #799905 5%, #536904 95%)
   
   &-item
     transition: background-color 0.25s ease

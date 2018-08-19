@@ -83,15 +83,15 @@
 
                     <div class="profile_customization_block">
                       <div class="screenshot_showcase">
-                        <div class="screenshot_showcase_primary showcase_slot ">
-                          <a class="screenshot_showcase_screenshot modalContentLink" href="">
+                        <div class="screenshot_showcase_primary showcase_slot">
+                          <div class="screenshot_showcase_screenshot">
                             <div class="profile_main_artbox" :style="{ 
                               backgroundImage: `url('${$store.state.background}')`,
                               width: `${$store.state.bgSize.w}px`,
                               height: `${$store.state.bgSize.h - 272}px`
                             }"> </div>
                             <!-- <img width="100%" style="max-width: 506px;" :src="$store.state.background"> -->
-                          </a>
+                          </div>
                           <div class="screenshot_showcase_itemname">
                           &nbsp;
                           </div>
@@ -101,19 +101,19 @@
                           </div>
                         </div>
                         <div class="screenshot_showcase_rightcol">
-                          <div class="screenshot_showcase_smallscreenshot showcase_slot ">
-                            <a class="screenshot_showcase_screenshot modalContentLink" href="">
+                          <div class="screenshot_showcase_smallscreenshot showcase_slot">
+                            <div class="screenshot_showcase_screenshot">
                               <div class="profile_main_artbox_side1" :style="{ 
                                 backgroundImage: `url('${$store.state.background}')`,
                                 width: `${$store.state.bgSize.w}px`,
                                 height: `${$store.state.bgSize.h - 272}px`
                               }"> </div>
                               <!-- <img width="100%" style="max-width: 100px;" :src="$store.state.background"> -->
-                            </a>
+                            </div>
                           </div>
-                          <a class="screenshot_showcase_smallscreenshot screenshot_count" href="">
+                          <div class="screenshot_showcase_smallscreenshot screenshot_count">
                             <div class="screenshot_showcase_screenshot"> &nbsp; </div>
-                          </a>
+                          </div>
                         </div>
                         <div style="clear: both;"></div>
                       </div>
@@ -179,6 +179,7 @@ export default {
   flex: 0 1 auto;
   user-select: none;
   cursor: default;
+  border-radius: 0 0 10px 10px;
 }
 
 div {
