@@ -50,6 +50,7 @@ export default store => {
     }
   } catch (e) {
     console.log('Can\'t init greenworks')
+    store.commit('setUser', 0)
   }
 }
 
