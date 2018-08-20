@@ -1,6 +1,6 @@
 {
-  "name": "vue-e-test",
-  "version": "0.0.0",
+  "name": "sapic-ne",
+  "version": "0.1.0",
   "author": "Tim <truecarry@gmail.com>",
   "description": "An electron-vue project",
   "license": "BSD",
@@ -22,8 +22,8 @@
     "postinstall": "npm run lint:fix && electron-builder install-app-deps"
   },
   "build": {
-    "productName": "vue-e-test",
-    "appId": "org.simulatedgreg.electron-vue",
+    "productName": "Steam.Design",
+    "appId": "design.steam",
     "directories": {
       "output": "build"
     },
