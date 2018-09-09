@@ -10,15 +10,14 @@
       .menu__window-button(@click="$store.dispatch('getCurrentBg')")
         .menu__window-button-text Get this BG
       
-      .menu__window-item
-        .menu__window-item-text(@click="$store.dispatch('openDiscord')")
-          img.menu__window-discord.discord-img(
+      .menu__window-item-discord(@click="$store.dispatch('openDiscord')")
+          img.menu__window-discord(
             src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
           )
 
       .menu__window-section-container
 
-        .menu__window-button.small
+        .menu__window-button.noclick.small
           .menu__window-button-text Zoom Scale:
 
         .menu__window-scale__container
@@ -95,16 +94,24 @@ export default {
 
 
   &-discord
+    margin 10px 10px 0 10px
+    transition: filter 0.25s ease
+    text-align center
+    display flex
+    cursor pointer
     height 55px
-    margin-top 5px
     border-radius 5px
+
+    &:hover
+      filter: drop-shadow( 0px 3px 10px black)
+      transition: filter 0.25s ease
 
   &-button
     transition: background-color 0.25s ease
     border 1px solid gray 
     border-radius 5px
     cursor pointer
-    margin 5px 10px 0 10px
+    margin 10px 10px 0 10px
     text-align center
     transition: filter 0.25s ease
     display flex
@@ -123,17 +130,25 @@ export default {
       color #ffffff
       margin 15px 0
 
+    &.noclick
+      cursor default
+      filter initial 
+      background transparent
+
     &.small
       .menu__window-button-text
-        margin 10px 0
-    
+        margin 7px
+
     &-download
      background linear-gradient( to bottom, #799905 5%, #536904 95%)
+
+     &:hover
+      background linear-gradient( to bottom, #b6d908 5%, #80a006 95%);
   
   &-item
     transition: background-color 0.25s ease
     cursor pointer
-    margin 5px 10px 0 10px
+    margin 10px 10px 0 10px
     text-align center
     transition: filter 0.25s ease
     display flex
@@ -166,6 +181,7 @@ export default {
       &:checked
         & + label
           background #101922
+          cursor default
 
     &__label
       transition: all 0.25s ease
@@ -185,11 +201,4 @@ export default {
       bottom: 11px
       text-shadow: 0px 4px 10px black;
       color #ffffff
-
-.discord-img
-  transition: box-shadow 0.25s ease
-  
-  &:hover
-    box-shadow 0px 3px 10px black
-    transition: box-shadow 0.25s ease
 </style>

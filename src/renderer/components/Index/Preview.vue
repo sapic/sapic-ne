@@ -1,27 +1,5 @@
 <template>
   <div class="responsive_page_frame with_header main-container">
-    <div class="responsive_header">
-      <div class="responsive_header_content">
-        <div id="responsive_menu_logo">
-          <img src="https://steamcommunity-a.akamaihd.net/public/shared/images/responsive/header_menu_hamburger.png" height="100%">
-          <div class="responsive_header_notification_badge_ctn">
-            <div class="responsive_header_notification_badge notification_count_total_ctn has_notifications">
-              <span class="notification_count">4</span>
-            </div>
-          </div>
-        </div>
-        <div class="responsive_header_logo">
-          <img src="https://steamcommunity-a.akamaihd.net/public/shared/images/responsive/header_logo.png" height="36" border="0" alt="STEAM">
-        </div>
-      </div>
-    </div>
-
-    <div class="responsive_page_content_overlay">
-
-    </div>
-
-    <div class="responsive_fixonscroll_ctn nonresponsive_hidden ">
-    </div>
 
     <div class="responsive_page_content">
 
@@ -72,14 +50,12 @@
             </div>
             <div class="profile_content_inner">
 
-              <div class="profile_rightcol"></div>
-
               <div class="profile_leftcol">
 
                 <div class="profile_customization_area">
 
                   <div class="profile_customization">
-                    <div class="profile_customization_header">Artwork Showcase</div>
+                    <div class="profile_customization_header">&nbsp;</div>
 
                     <div class="profile_customization_block">
                       <div class="screenshot_showcase">
@@ -94,10 +70,6 @@
                           </div>
                           <div class="screenshot_showcase_itemname">
                           &nbsp;
-                          </div>
-                          <div class="screenshot_showcase_stats">
-                            <span class="screenshot_showcase_stat" title="Up Votes">
-                              <img class="screenshot_showcase_staticon" src="https://steamcommunity-a.akamaihd.net/public/images/sharedfiles/icons/icon_rate.png"> 1 </span>
                           </div>
                         </div>
                         <div class="screenshot_showcase_rightcol">
@@ -115,19 +87,14 @@
                             <div class="screenshot_showcase_screenshot"> &nbsp; </div>
                           </div>
                         </div>
-                        <div style="clear: both;"></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div style="clear: both;"></div>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
 
