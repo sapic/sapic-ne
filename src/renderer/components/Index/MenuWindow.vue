@@ -9,7 +9,14 @@
       
       .menu__window-button(@click="$store.dispatch('getCurrentBg')")
         .menu__window-button-text Get this BG
-      
+
+      .menu__window-section-container
+
+        .menu__window-button.noclick.small
+          .menu__window-button-text Enter a BG Url here:
+        
+        input.menu__window-button.textbox.noclick(placeholder="TrueCarry needs to make URL parser")
+
       .menu__window-item-discord(@click="$store.dispatch('openDiscord')")
           img.menu__window-discord(
             src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
@@ -60,6 +67,8 @@
           )
           label(for="scale125").menu__window-scale__label
             .menu__window-scale__button 125%
+    .menu__window-credits
+      .menu__window-credits-text Made with ❤️ by TrueCarry and The Oddball
 
 </template>
 
@@ -135,9 +144,16 @@ export default {
       filter initial 
       background transparent
 
+    &.textbox
+      cursor text
+      width 230px
+      height 25px
+      color #ffffff
+
     &.small
       .menu__window-button-text
-        margin 7px
+        margin 4px
+        font-size 14px
 
     &-download
      background linear-gradient( to bottom, #799905 5%, #536904 95%)
@@ -201,4 +217,14 @@ export default {
       bottom: 11px
       text-shadow: 0px 4px 10px black;
       color #ffffff
+
+  &-credits
+    position absolute 
+    bottom 0
+
+    &-text
+      text-shadow: 0px 4px 10px black;
+      color #ffffff
+      font-size 11px
+      margin-bottom 5px
 </style>
