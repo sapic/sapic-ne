@@ -91,7 +91,7 @@ export default {
 .menu__window
   height 100%
   width 250px
-  background #363F49
+  background #12151A
   flex-shrink 0
   user-select none
   display flex
@@ -109,46 +109,45 @@ export default {
     display flex
     cursor pointer
     height 55px
-    border-radius 5px
+    border-radius 3px
 
     &:hover
       filter: drop-shadow( 0px 3px 10px black)
       transition: filter 0.25s ease
 
   &-button
+    background-color #08090b
     transition: background-color 0.25s ease
-    border 1px solid gray 
-    border-radius 5px
+    border-radius 3px
     cursor pointer
     margin 10px 10px 0 10px
     text-align center
-    transition: filter 0.25s ease
     display flex
     align-items center
     justify-content center
 
     &:hover
-      transition: filter 0.25s ease
-      filter: drop-shadow( 0px 3px 10px black);
       transition: background-color 0.25s ease
-      background-color #5f6873
+      background-color #1c2129
 
     &-text
       bottom: 11px
-      text-shadow: 0px 4px 10px black;
+      font-size 17px
+      font-weight 300
       color #ffffff
       margin 15px 0
 
     &.noclick
       cursor default
       filter initial 
-      background transparent
+      background-color #08090b
 
     &.textbox
       cursor text
-      width 230px
-      height 25px
+      width 232px
+      height 30px
       color #ffffff
+      border none
 
     &.small
       .menu__window-button-text
@@ -156,10 +155,10 @@ export default {
         font-size 14px
 
     &-download
-     background linear-gradient( to bottom, #799905 5%, #536904 95%)
+      background linear-gradient( to bottom, #799905 5%, #536904 95%)
 
-     &:hover
-      background linear-gradient( to bottom, #b6d908 5%, #80a006 95%);
+      &:hover
+       background linear-gradient( to bottom, #b6d908 5%, #80a006 95%);
   
   &-item
     transition: background-color 0.25s ease
@@ -175,11 +174,10 @@ export default {
       transition: filter 0.25s ease
       filter: drop-shadow( 0px 3px 10px black);
       transition: background-color 0.25s ease
-      background-color #5f6873
+      background-color #1c2129
 
     &-text
       bottom: 11px
-      text-shadow: 0px 4px 10px black;
       color #ffffff
       margin 0
 
@@ -196,22 +194,22 @@ export default {
 
       &:checked
         & + label
-          background #101922
+          background #272d38
           cursor default
 
     &__label
       transition: all 0.25s ease
-      border 1px solid gray 
-      border-radius 5px
+      background-color #08090b
+      border-radius 3px
       cursor pointer
       margin-top 5px
       text-align center
       width 38%
       flex 0 0 auto
-      padding 10px
+      padding 12px
 
       &:hover
-        background #5f6873
+        background #1c2129
 
     &__button
       bottom: 11px
@@ -223,7 +221,6 @@ export default {
     bottom 0
 
     &-text
-      text-shadow: 0px 4px 10px black;
       color #ffffff
       font-size 11px
       margin-bottom 5px

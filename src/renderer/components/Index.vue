@@ -75,7 +75,7 @@ export default {
   height calc(100% - 30px)
   display flex
   flex-direction row
-  background-color #363f49
+  background-color #12151A
 }
 
 .preview__window {
@@ -136,7 +136,7 @@ html, body {
 
 body {
   margin: 0;
-  font-family: "Motiva Sans", Sans-serif;
+  font-family: "Product Sans";
 }
 
 
@@ -157,15 +157,15 @@ body {
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #363F49;
+  background: #12151A;
   transition: background-color 0.25s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
   transition: background-color 0.25s ease;
-  background-color: #5f6873;
+  background-color: #1c2129;
 }
 ::-webkit-scrollbar-thumb:active {
-  background: #101922;
+  background: #272d38;
 }
 ::-webkit-scrollbar-track {
   background: #666666;

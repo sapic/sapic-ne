@@ -53,22 +53,26 @@ export default {
 
 <style scoped lang="stylus">
 .titlebar {
-  height 30px
+  height 40px
   -webkit-app-region: drag
-  background-color: #363F49
+  background-color: #12151A
   user-select none
 }
 
 .actionbuttons {
   float right
   position relative
-  height 100%
+  width 135px
+  height 31px
+  background-color #07080A
 }
 
 .actionbutton {
-  height 100%
-  width 40px
+  height 32px
+  width 45px
+  position relative
   background:none
+  margin-right -4px
   border:none
   outline:none
   fill #ffffff
@@ -87,8 +91,8 @@ export default {
 }
 
 .titlelogo {
-  height 17px
-  width 17px
+  height 25px
+  width 25px
   position relative
   top 7px
   left 7px
@@ -114,10 +118,9 @@ export default {
 .titletext {
   color #ffffff
   position relative
-  top 4px
+  bottom -1px
   left 9px
   font-weight 100
-  text-shadow: 0px 4px 9px black;
-  font-size 15px
+  font-size 20px
 }
 </style>
