@@ -68,7 +68,7 @@ export default {
 }
 
 .actionbutton {
-  height 32px
+  height 31px
   width 45px
   position relative
   background:none
