@@ -174,14 +174,17 @@ div {
 .responsive_page_frame {
   color: #8F98A0;
 }
+
+.playerAvatar.online {
+	background-color: #57cbde;
+	background: linear-gradient( to bottom, rgba(83, 164, 196, 1) 5%, rgba(69, 128, 151, 1) 95%);
+	filter: none;
+}
+
+.playerAvatar.online img{
+	background: linear-gradient( to bottom, #41778f 5%, #3d697b 95%);
+}
 </style>
 
-<style scoped src="@/assets/css/buttons.css"></style>
-<style scoped src="@/assets/css/globalv2.css"></style>
-<style scoped src="@/assets/css/header.css"></style>
-<style scoped src="@/assets/css/modalContent.css"></style>
 <style scoped src="@/assets/css/motiva_sans.css"></style>
 <style scoped src="@/assets/css/profilev2.css"></style>
-<style scoped src="@/assets/css/shared_global.css"></style>
-<style scoped src="@/assets/css/shared_responsive.css"></style>
-<style scoped src="@/assets/css/stickers.css"></style>
