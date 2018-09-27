@@ -1088,15 +1088,10 @@ html.responsive .showcase_gamecollector_games .showcase_gamecollector_game:first
 }
 
 .screenshot_showcase_screenshot {
-	cursor: pointer;
 	border: 1px solid #000000;
 	display: block;
 	white-space: nowrap;
 	overflow: hidden;
-}
-
-.screenshot_showcase_screenshot:hover {
-	border: 1px solid #97C0E3;
 }
 
 .screenshot_showcase_primary .screenshot_showcase_screenshot {

@@ -137,7 +137,7 @@ export default {
 }
 
 .profile_header_bg {
-      background: rgba(18, 21, 26, .9);
+  background: rgba(18, 21, 26, .9);
   opacity: .9;
 }
 
