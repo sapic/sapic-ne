@@ -21,8 +21,8 @@
                     </div>
                   </div>
 
-                  <div class="playerAvatar profile_header_size in-game">
-                    <div class="playerAvatarAutoSizeInner"><img :src="$store.state.user.avatar"></div>
+                  <div class="playerAvatar profile_header_size online">
+                    <div class="playerAvatarAutoSizeInner"><img class="sapicAva" :src="$store.state.user.avatar"></div>
                   </div>
 
                   <div class="profile_header_badgeinfo">
@@ -136,10 +136,28 @@ export default {
   background-position: -508px -271px;
 }
 
+.profile_header_bg {
+  background-color: #12151A;
+  opacity: .9;
+}
+
+.profile_background_overlay_content {
+  background-color: #12151A;
+  opacity: .9;
+}
+
 .profile_main_artbox_side1 {
   width: 100%;
   height: 850px;
   background-position: -1022px -271px;
+}
+
+.profile_customization {
+  background-color: transparent;
+}
+
+.sapicAva{
+  border-radius: 5px;
 }
 
 .main-container { 

@@ -15,7 +15,7 @@
         .menu__window-button.noclick.small
           .menu__window-button-text Enter a BG Url here:
         
-        input.menu__window-button.textbox.noclick(placeholder="TrueCarry needs to make URL parser")
+        input.menu__window-button.textbox.noclick#urltextbox(placeholder="TrueCarry needs to make URL parser")
 
       .menu__window-item-discord(@click="$store.dispatch('openDiscord')")
           img.menu__window-discord(

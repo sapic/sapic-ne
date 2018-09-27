@@ -44,7 +44,6 @@ body.profile_page.flat_page #footer_spacer {
 	min-height: 224px;
 	padding-bottom: 16px;
 	margin: 0 auto;
-	background-image: url('https://steamcommunity-a.akamaihd.net/public/images/profile/profile_header_bg.png');
 	background-repeat: no-repeat;
 	background-position: center bottom;
 }
@@ -53,7 +52,6 @@ body.profile_page.flat_page #footer_spacer {
 	max-width: 976px;
 	min-height: 224px;
 	margin: 0 auto;
-	background-image: url('https://steamcommunity-a.akamaihd.net/public/images/profile/profile_header_bg_texture.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -81,6 +79,7 @@ body.profile_page.flat_page #footer_spacer {
 	position: relative;
 	width: 166px;
 	height: 166px;
+	border-radius: 5px;
 }
 
 .playerAvatar.profile_header_size .playerAvatarAutoSizeInner img {
@@ -407,10 +406,8 @@ body.profile_page.flat_page #footer_spacer {
 
 .profile_customization {
 	position: relative;
-	background-image: url('https://steamcommunity-a.akamaihd.net/public/images/profile/showcase_bg.png');
 	background-position: top left;
 	background-repeat: no-repeat;
-	background-color: #141414;
 	border-radius: 3px;
 	padding: 0 10px 11px 10px;
 	margin-bottom: 12px;
@@ -1872,7 +1869,6 @@ body.migrated_profile_page #BG_bottom.maincontent {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: #000000;
 	z-index: 0;
 }
 
@@ -1895,10 +1891,6 @@ body.migrated_profile_page #BG_bottom.maincontent {
 	bottom: 0;
 	left: 0;
 	z-index: 1;
-	background-color: #171717;
-	opacity: .85;
-	filter: alpha(opacity=85);
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
 }
 
 .profile_customization.customization_edit {}
