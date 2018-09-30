@@ -224,7 +224,7 @@ export default {
       cursor pointer
       margin-top 5px
       text-align center
-      width 38%
+      width 49%
       flex 0 0 auto
       padding 12px
 
