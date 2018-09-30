@@ -185,6 +185,8 @@ div {
 	background: linear-gradient( to bottom, #41778f 5%, #3d697b 95%);
 }
 
+/* Below is Steam CSS */
+
 div.profile_page {
 	position: relative;
 	min-width: 950px;
