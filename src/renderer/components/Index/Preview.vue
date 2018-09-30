@@ -84,7 +84,7 @@
                             </div>
                           </div>
                           <div class="screenshot_showcase_smallscreenshot screenshot_count">
-                            <div class="screenshot_showcase_screenshot"> &nbsp; +5</div>
+                            <div class="screenshot_showcase_screenshot"> &nbsp;</div>
                           </div>
                         </div>
                       </div>
