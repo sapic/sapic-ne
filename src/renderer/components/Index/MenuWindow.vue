@@ -105,8 +105,7 @@ export default {
   align-items center
 
   &-section-container
-    margin-top 5px
-
+    margin-top 10px
 
   &-discord
     margin 10px 10px 0 10px
@@ -154,6 +153,9 @@ export default {
       height 30px
       color #ffffff
       border none
+      outline none
+      padding-top: 5px;
+      padding-bottom: 5px;
 
     &.small
       .menu__window-button-text
