@@ -82,7 +82,7 @@ export default {
     },
     bgURL: {
       set (value) {
-        if (value.match(/\.(jpeg|jpg|png)$/)) {
+        if (value.match(/\.(?:jpeg|jpg|png)$/i)) {
           this.$store.commit('setBackgroundURL', value)
         }
       },
