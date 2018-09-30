@@ -154,8 +154,11 @@ export default {
       color #ffffff
       border none
       outline none
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding: 6px
+      text-align left
+      transition box-shadow 300ms ease-in-out
+      &:focus
+        box-shadow 0 0 40px rgba(0,0,0,0.3)
 
     &.small
       .menu__window-button-text
@@ -241,4 +244,7 @@ export default {
       color #ffffff
       font-size 11px
       margin-bottom 5px
+
+*
+  box-sizing border-box
 </style>
