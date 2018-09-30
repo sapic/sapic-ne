@@ -3,7 +3,7 @@
     .menu__window-buttons
       .menu__window-button.menu__window-button-download(@click="$store.dispatch('downloadZip')")
         .menu__window-button-text Download ZIP
-      
+      .menu__window-shadow
       .menu__window-button(@click="$store.dispatch('randomBackground')")
         .menu__window-button-text Random BG
       
@@ -161,13 +161,22 @@ export default {
       .menu__window-button-text
         margin 4px
         font-size 14px
-
     &-download
-      background linear-gradient( to bottom, #799905 5%, #536904 95%)
-
+      background linear-gradient(45deg, #36bbf7 0%, #702df9 100%)
+      position relative
+      z-index: 2
+      opacity .8
+      transition opacity 200ms ease-in-out
       &:hover
-       background linear-gradient( to bottom, #b6d908 5%, #80a006 95%);
-  
+       opacity 1
+
+  &-shadow
+    background linear-gradient(45deg, #36bbf7 0%, #702df9 100%)
+    filter blur(10px)
+    position relative
+    height 50px
+    top -50px
+    z-index: 1
   &-item
     transition: background-color 0.25s ease
     cursor pointer
