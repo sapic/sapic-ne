@@ -11,11 +11,8 @@
         .menu__window-button-text Get this BG
 
       .menu__window-section-container
-
-        .menu__window-button.noclick.small
-          .menu__window-button-text Enter a BG Url here:
         
-        input.menu__window-button.textbox.noclick#urltextbox(placeholder="TrueCarry needs to make URL parser")
+      input.menu__window-button.textbox.noclick#urltextbox(placeholder="Paste a background URL here", v-model="bgURL")
 
       .menu__window-item-discord(@click="$store.dispatch('openDiscord')")
           img.menu__window-discord(
@@ -81,6 +78,15 @@ export default {
       },
       set (value) {
         this.$store.commit('setPreviewScale', value)
+      }
+    },
+    bgURL: {
+      set (value) {
+        if (value.match(/\.(jpeg|jpg|png)$/)) {
+          this.$store.commit('setBackgroundURL', value)
+        }
+      },
+      get () {
       }
     }
   }

@@ -43,6 +43,9 @@ const createStore = () => {
       setBackground (state, background) {
         state.background = background
       },
+      setBackgroundURL (state, value) {
+        state.background = value
+      },
       setBackgrounds (state, backgrounds) {
         state.backgrounds = backgrounds
         state.nextRandomBackgrounds.push(state.backgrounds[Math.floor(state.backgrounds.length * Math.random())])
