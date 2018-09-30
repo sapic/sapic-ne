@@ -3,7 +3,9 @@
     .menu__window-buttons
       .menu__window-button.menu__window-button-download(@click="$store.dispatch('downloadZip')")
         .menu__window-button-text Download ZIP
+
       .menu__window-shadow
+
       .menu__window-button(@click="$store.dispatch('randomBackground')")
         .menu__window-button-text Random BG
       
@@ -155,23 +157,25 @@ export default {
       border none
       outline none
       padding: 6px
-      text-align left
-      transition box-shadow 300ms ease-in-out
+      text-align center
+      transition box-shadow 0.25s ease-in-out
       &:focus
-        box-shadow 0 0 40px rgba(0,0,0,0.3)
+        box-shadow 0 0 40px rgba(0,0,0,0.4)
 
     &.small
       .menu__window-button-text
         margin 4px
         font-size 14px
+        
     &-download
       background linear-gradient(45deg, #36bbf7 0%, #702df9 100%)
       position relative
       z-index: 2
       opacity .8
-      transition opacity 200ms ease-in-out
+      transition opacity 0.25s ease
       &:hover
        opacity 1
+       transition opacity 0.25s ease
 
   &-shadow
     background linear-gradient(45deg, #36bbf7 0%, #702df9 100%)
@@ -179,7 +183,10 @@ export default {
     position relative
     height 50px
     top -50px
-    z-index: 1
+    margin-bottom -50px
+    width 97%
+    left 1%
+
   &-item
     transition: background-color 0.25s ease
     cursor pointer
