@@ -71,7 +71,10 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+    font-family: open sans;
+    src: url(../assets/opensans.ttf);
+}
 .body__wrapper {
   height calc(100% - 30px)
   display flex
@@ -137,7 +140,7 @@ html, body {
 
 body {
   margin: 0;
-  font-family: "Open Sans";
+  font-family: "open sans";
 }
 
 
