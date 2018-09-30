@@ -5,11 +5,14 @@ import Jimp from 'jimp'
 export default store => {
   let state = JSON.parse(JSON.stringify(store.state))
   const { commit } = store
+  const { dispatch } = store
 
   if (!state.backgrounds || state.backgrounds.length < 10) {
     const bgs = require('@/assets/bg.json')
     commit('setBackgrounds', bgs)
   }
+
+  dispatch('randomBackground')
 
   const curWindow = remote.getCurrentWindow()
   commit('setCurrentWindow', curWindow)
