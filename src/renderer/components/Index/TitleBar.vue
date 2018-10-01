@@ -52,75 +52,73 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.titlebar {
+$color-1 = #12151a
+$color-2 = #07080a
+$color-3 = #5f6873
+$color-4 = #f04747
+$color-5 = #fff
+
+.titlebar 
   height 40px
-  -webkit-app-region: drag
-  background-color: #12151A
+  -webkit-app-region drag
+  background-color #12151A
   user-select none
-}
 
-.actionbuttons {
-  float right
-  position relative
-  width 135px
-  height 31px
-  background-color #07080A
-}
+.actionbuttons
+    float right
+    position relative
+    width 135px
+    height 31px
+    background-color $color-2
 
-.actionbutton {
-  height 31px
-  width 45px
-  position relative
-  background:none
-  margin-right -4px
-  border:none
-  outline:none
-  fill #ffffff
-  filter: drop-shadow( 0px 3px 2px black);
-  transition: background-color 0.25s ease
-}
+.actionbutton
+    height 31px
+    width 45px
+    position relative
+    background none
+    margin-right -4px
+    border none
+    outline none
+    fill #ffffff
+    filter drop-shadow( 0px 3px 2px black)
+    transition background-color 0.25s ease
 
-.actionbutton:hover{
-  transition: background-color 0.25s ease
-  background-color #5f6873
-}
+    &:hover
+        transition background-color 0.25s ease
+        background-color $color-3
 
-.closebutton:hover {
-  transition: background-color 0.25s ease
-  background-color #f04747
-}
+.closebutton
+    &:hover
+        transition background-color 0.25s ease
+        background-color $color-4
 
-.titlelogo {
-  height 25px
-  width 25px
-  position relative
-  top 7px
-  left 7px
-}
+.titlelogo
+    height 25px
+    width 25px
+    position relative
+    top 7px
+    left 7px
 
-.resizeHandle {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  -webkit-app-region: no-drag;
-}
+.resizeHandle
+    position absolute
+    top 0px
+    left 0px
+    app-region no-drag
 
-.resizeHandle.resizeHandleTop {
-  width: 100%;
-  height: 5px;
-}
+    &.resizeHandleTop
+        width 100%
+        height 5px
 
-.resizeHandle.resizeHandleLeft {
-  width: 3px;
-  height: 28px;
-}
+    &.resizeHandleLeft
+        width 3px
+        height 28px
 
-.titletext {
-  color #ffffff
-  position relative
-  bottom -1px
-  left 9px
-  font-weight 100
-  font-size 20px
-}
+.titletext
+    color $color-5
+    position relative
+    bottom -1px
+    left 9px
+    font-weight 100
+    font-size 20px
+
 </style>
