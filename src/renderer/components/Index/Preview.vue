@@ -45,8 +45,6 @@
 
             <div class="profile_background_holder_content">
               <div class="profile_background_overlay_content"></div>
-              <div class="profile_background_image_content" :style="{ backgroundImage: `url('${$store.state.background}')` }">
-              </div>
             </div>
             <div class="profile_content_inner">
 
@@ -131,7 +129,6 @@ export default {
 
 <style scoped lang="stylus">
 $color-1 = rgba(18, 21, 26, .9)
-$color-2 = #12151a
 $color-3 = #8f98a0
 $color-4 = #57cbde
 $color-5 = rgba(83, 164, 196, 1)
@@ -162,8 +159,7 @@ $color-14 = #222223
     background-position center bottom
 
 .profile_background_overlay_content
-    background-color $color-2
-    opacity .9
+    background-color $color-1
     position absolute
     top 0
     right 0
@@ -315,9 +311,7 @@ div
 
     &.has_profile_background
         background none
-        margin-top -14px
         overflow hidden
-        padding-top 14px
 
 .profile_content_inner
     position relative
@@ -382,16 +376,6 @@ div
     right 0
     bottom 0
     left 0
-    z-index 0
-
-.profile_background_image_content
-    position absolute
-    top 0
-    right 0
-    bottom 0
-    left 0
-    background-position center -226px
-    background-repeat no-repeat
     z-index 0
 </style>
 
