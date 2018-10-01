@@ -46,13 +46,13 @@
       ]
     },
     "mac": {
-      "icon": "build/icons/icon.icns"
+      "icon": "src/renderer/components/index/assets/icons/icon.icns"
     },
     "win": {
-      "icon": "build/icons/icon.ico"
+      "icon": "src/renderer/components/index/assets/icons/icon.ico"
     },
     "linux": {
-      "icon": "build/icons"
+      "icon": "src/renderer/components/index/assets/icons"
     }
   },
   "dependencies": {
