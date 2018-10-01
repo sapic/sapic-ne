@@ -71,10 +71,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@font-face {
-    font-family: open sans;
-    src: url(../assets/opensans.ttf);
-}
 .body__wrapper {
   height calc(100% - 30px)
   display flex
@@ -184,3 +180,4 @@ body {
   background: transparent;
 }
 </style>
+<style scoped src="@/assets/fonts/opensans.css"></style>
