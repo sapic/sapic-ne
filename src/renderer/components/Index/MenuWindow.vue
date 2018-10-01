@@ -179,13 +179,12 @@ export default {
 
   &-shadow
     background linear-gradient(45deg, #36bbf7 0%, #702df9 100%)
-    filter blur(10px)
+    filter blur(12px)
     position relative
-    height 50px
-    top -50px
-    margin-bottom -50px
-    width 97%
-    left 1%
+    height 53px
+    top -63px
+    margin: 10px 10px -63px 10px;
+    width 232px
 
   &-item
     transition: background-color 0.25s ease
