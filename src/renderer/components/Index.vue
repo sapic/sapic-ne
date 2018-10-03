@@ -136,7 +136,7 @@ html, body {
 
 body {
   margin: 0;
-  font-family: "Product Sans";
+  font-family: "open sans";
 }
 
 
@@ -180,3 +180,4 @@ body {
   background: transparent;
 }
 </style>
+<style scoped src="@/assets/fonts/opensans.css"></style>
