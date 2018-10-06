@@ -1,7 +1,8 @@
 .DS_Store
 dist/electron/*
 dist/web/*
-build
+build/*
+!build/icons
 coverage
 node_modules/
 npm-debug.log
