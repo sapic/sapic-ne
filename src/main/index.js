@@ -11,9 +11,13 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 let mainWindow
+// const winURL = process.env.NODE_ENV === 'development'
+//   ? `http://localhost:9080`
+//   : `file://${__dirname}/index.html`
+
 const winURL = process.env.NODE_ENV === 'development'
-  ? `http://localhost:9080`
-  : `file://${__dirname}/index.html`
+  ? 'http://localhost:9080/#/login-window'
+  : `file://${__dirname}/index.html#login-window`
 
 function createWindow () {
   /**
@@ -48,13 +52,27 @@ app.on('activate', () => {
   }
 })
 
-/**
- * Auto Updater
- *
- * Uncomment the following code below and install `electron-updater` to
- * support auto updating. Code Signing with a valid certificate is required.
- * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
- */
+// ipcMain.on('ask-login', askKeyEvent => {
+//   let askLoginPrompt = new BrowserWindow({
+//     width: 500,
+//     height: 500,
+//     parent: mainWindow,
+//     modal: true,
+//     frame: false,
+//     resizable: false
+//   })
+//   askLoginPrompt.loadURL(
+//     process.env.NODE_ENV === 'development'
+//       ? 'http://localhost:9080/#/login-window'
+//       : `file://${__dirname}/index.html#login-window`
+//   )
+
+//   // ipcMain.once('set-key', (setKeyEvent, setKeyArgu) => {
+//   //   askKeyPrompt.close();
+//   //   askKeyPrompt = null;
+//   //   askKeyEvent.sender.send('reply-ask-key', setKeyArgu);
+//   // });
+// })
 
 /*
 import { autoUpdater } from 'electron-updater'

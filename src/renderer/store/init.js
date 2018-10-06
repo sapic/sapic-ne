@@ -1,8 +1,11 @@
-import { remote } from 'electron'
+import { remote, ipcRenderer } from 'electron'
 import greenworks from 'greenworks'
 import Jimp from 'jimp'
+import SteamCommunity from 'steamcommunity'
 
 export default store => {
+  ipcRenderer.send('ask-login')
+
   let state = JSON.parse(JSON.stringify(store.state))
   const { commit } = store
   const { dispatch } = store
@@ -31,6 +34,34 @@ export default store => {
     greenworks.init()
     store.commit('setGreenworks', greenworks)
 
+    let community = new SteamCommunity({
+      dataDirectory: null
+    })
+
+    community.login({
+      accountName: 'phantom9696',
+      password: 'ILovePotatoes',
+      twoFactorCode: 'C3T3K'
+    }, (r, d) => {
+      console.log('res', r, d)
+    })
+
+    // greenworks.ugcPublish('image.jpg', 'image.jpg', 'image', 'image.jpg', (s) => {
+    //   console.log('success', s)
+    // }, (s, e) => {
+    //   console.log('error', s, e)
+    // }, (s) => {
+    //   console.log('progress', s)
+    // })
+
+    // greenworks.publishWorkshopFile('image.jpg', 'image.jpg', 'image', 'image', (s) => {
+    //   console.log('success', s)
+    // }, (s, e) => {
+    //   console.log('error', s, e)
+    // }, (s) => {
+    //   console.log('progress', s)
+    // })
+
     let user = greenworks.getSteamId()
 
     store.commit('setUser', user)
@@ -52,7 +83,7 @@ export default store => {
       })
     }
   } catch (e) {
-    console.log('Can\'t init greenworks')
+    console.log('Can\'t init greenworks', e)
     store.commit('setUser', 0)
   }
 }
