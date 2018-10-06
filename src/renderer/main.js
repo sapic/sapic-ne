@@ -31,7 +31,7 @@ rpc.on('ready', () => {
 
   setInterval(() => {
     setActivity()
-  }, 15e3)
+  }, 1500)
 })
 
 rpc.login({ clientId }).catch(console.error)
