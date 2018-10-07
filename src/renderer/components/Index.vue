@@ -23,6 +23,7 @@
 import TWEEN from '@tweenjs/tween.js'
 
 import Preview from './Index/Preview'
+import Backgrounds from './Index/Backgrounds'
 import TitleBar from './Index/TitleBar'
 import MenuWindow from './Index/MenuWindow'
 
@@ -30,7 +31,8 @@ export default {
   components: {
     Preview,
     TitleBar,
-    MenuWindow
+    MenuWindow,
+    Backgrounds
   },
   data () {
     return {
