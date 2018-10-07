@@ -11,6 +11,7 @@ Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 const clientId = '477048998176489472'
+const curTime = Date.now()
 const rpc = new DiscordRPC.Client({ transport: 'ipc' })
 
 async function setActivity () {
@@ -19,6 +20,7 @@ async function setActivity () {
   }
 
   rpc.setActivity({
+    startTimestamp: curTime,
     largeImageKey: 'steam_design_massive_png',
     largeImageText: 'Steam.Design',
     instance: false
