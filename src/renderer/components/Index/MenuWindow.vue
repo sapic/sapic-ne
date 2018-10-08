@@ -161,11 +161,8 @@ $color-9 = #272d38
         cursor text
         width 232px
         height 30px
-        color $color-5
         border none
         outline none
-        padding 6px
-        text-align center
         transition box-shadow 0.25s ease-in-out
 
         &:focus
