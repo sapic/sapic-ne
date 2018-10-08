@@ -15,6 +15,7 @@
           <preview class="" />
         </div>
       </div>
+      <inventory />
     </section>
   </div>
 </template>
