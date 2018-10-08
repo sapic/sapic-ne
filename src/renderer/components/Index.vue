@@ -140,6 +140,7 @@ html, body {
 body {
   margin: 0;
   font-family: "open sans";
+  overflow: hidden;
 }
 
 
