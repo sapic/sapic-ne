@@ -10,22 +10,21 @@
         .menu__window-button-text Random BG
       
       .menu__window-button(@click="$store.dispatch('getCurrentBg')")
-        .menu__window-button-text Get this BG  
+        .menu__window-button-text Get this BG
 
-      input.length__slider(type="range")
-      input.menu__px__input(placeholder="px")
+      input.menu__window-button.textbox.noclick#urltextbox(placeholder="Paste a background URL here", v-model="bgURL")  
 
-      input.menu__window-button.textbox.noclick#lengthinput(placeholder="Length of artwork")
-
-      .menu__window-item-discord(@click="$store.dispatch('openDiscord')")
-          img.menu__window-discord(
-            src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
-          )
+      .menu__window-section-container    
+        .menu__window-button.noclick.small 
+          .menu__window-button-text Image Height
+        
+        input.menu__window-button.length__slider(type="range")
+        input.menu__window-button.textbox.px(placeholder="px")
 
       .menu__window-section-container
 
         .menu__window-button.noclick.small
-          .menu__window-button-text Zoom Scale:
+          .menu__window-button-text Zoom Scale
 
         .menu__window-scale__container
           input.menu__window-scale__input(
@@ -67,7 +66,12 @@
           )
           label(for="scale125").menu__window-scale__label
             .menu__window-scale__button 125%
+
     .menu__window-credits
+      .menu__window-item-discord(@click="$store.dispatch('openDiscord')")
+        img.menu__window-discord(
+          src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
+        )
       .menu__window-credits-text Made with ❤️  by TrueCarry and The Oddball
 
 </template>
@@ -106,40 +110,6 @@ $color-6 = rgba(0,0,0,0.4)
 $color-7 = #36bbf7
 $color-8 = #702df9
 $color-9 = #272d38
-
-.menu__px__input
-  float left
-  width 22%
-  margin: 10px 0 10px 10px
-  border-radius 3px
-  background $color-3
-  border-style none 
-  outline none
-  padding 5px
-  color $color-5
-
-.length__slider
-  margin: 17.5px 0 10px 0
-  -webkit-appearance: none
-  width 65%
-  height 6px
-  background $color-4
-  outline none
-  margin-left 5%
-  float left
-  border-radius 10px
-  position relative
-  -webkit-transition .2s
-  transition opacity .2s
-  &::-webkit-slider-thumb
-    -webkit-appearance: none
-    appearance: none
-    width: 15px
-    height: 15px
-    background linear-gradient(45deg, $color-7 0%, $color-8 100%)
-    box-shadow 0 0 20px rgba(78, 115, 238, .5)
-    cursor: pointer
-    border-radius: 50%
 
 .menu__window
     height 100%
@@ -200,6 +170,29 @@ $color-9 = #272d38
 
         &:focus
             box-shadow 0 0 40px $color-6
+        
+        &.px
+          width 55px
+
+    &.length__slider
+      margin: 22px 10px 10px 0
+      -webkit-appearance: none
+      width 164px
+      height 6px
+      background $color-4
+      outline none
+      margin-left 5%
+      float left
+        
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+        appearance: none
+        width: 15px
+        height: 15px
+        background linear-gradient(45deg, $color-7 0%, $color-8 100%)
+        box-shadow 0 0 20px rgba(78, 115, 238, .5)
+        cursor: pointer
+        border-radius: 50%
 
     &.small
         .menu__window-button-text
@@ -297,6 +290,8 @@ $color-9 = #272d38
     color $color-5
     font-size 11px
     margin-bottom 5px
+    margin-top 5px
+    text-align center
 
 *
     box-sizing border-box
