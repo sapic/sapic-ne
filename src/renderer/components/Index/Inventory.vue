@@ -1,7 +1,7 @@
 <template lang="pug">
 .backgrounds_container
     button.hover-button
-        p invetory
+        p Inventory
     - for (let a=0; a < 10; a++)
         .invetory-item
 </template>
@@ -36,10 +36,9 @@ $color-9 = #272d38
         background-size cover
     .hover-button
         position absolute
-        float right
         outline none 
         cursor pointer
-        width 100px
+        width 100%
         height 25px
         bottom 200px
         right 9px
