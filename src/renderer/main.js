@@ -10,7 +10,7 @@ if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
-const clientId = '477048998176489472'
+const clientId = process.env.DISCORD_CLIENT_ID || '477048998176489472'
 const curTime = Date.now()
 const rpc = new DiscordRPC.Client({ transport: 'ipc' })
 

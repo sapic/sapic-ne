@@ -74,21 +74,27 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.body__wrapper {
-  height calc(100% - 30px)
-  display flex
-  flex-direction row
-  background-color #12151A
-}
+@import "../assets/css/color"
+.body__wrapper
+    height calc(100% - 30px)
+    display flex
+    flex-direction row
+    background-color $color-main
 
-.preview__window {
-  height 100%
-  flex 1 1 auto
-  overflow-y scroll
-  overflow-x hidden
-  border-top-left-radius 20px
-  background black
-}
+.preview__window
+    height 100%
+    flex: 1 1 auto
+    overflow-y: scroll
+    overflow-x: hidden
+    border-top-left-radius: 20px
+    background $color-black
+
+.wrapper
+    display flex
+    flex-direction column
+
+.hidden
+    display none
 
 .zoom_out
   margin: 0;
@@ -118,14 +124,6 @@ export default {
   //   width: calc(100% / 1.25) !important
   //   height calc(100% / 1.25) !important
 
-.wrapper {
-  display: flex
-  flex-direction column
-}
-
-.hidden {
-  display:none
-}
 </style>
 
 <style>

@@ -43,5 +43,3 @@
     &:hover
         bottom 0
 </style>
-
-// Needs to be added to routing
