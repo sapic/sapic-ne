@@ -253,7 +253,7 @@ div
     background-image url('https://steamcommunity-a.akamaihd.net/public/images/profile/profile_content_bg.png')
     background-position center
     background-repeat repeat-y
-    padding 0 12px 64px 12px
+    padding 30px 12px 64px 12px
     width 926px
     margin 0 auto
     font-size 13px
