@@ -219,7 +219,7 @@ div
 .profile_header_content
     position relative
     padding-top 8px
-    color $color-main-transparent1
+    color #898989
     font-size 13px
 
 .profile_header_summary
@@ -260,7 +260,7 @@ div
 .profile_customization_header
     font-family "Motiva Sans", Sans-serif
     font-weight 200
-    color $color-main-transparent3
+    color #5491cf
     font-size 20px
     line-height 30px
     overflow hidden
