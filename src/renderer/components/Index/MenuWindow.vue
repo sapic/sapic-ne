@@ -101,20 +101,12 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-$color-1 = #12151a
-$color-2 = #000
-$color-3 = #08090b
-$color-4 = #1c2129
-$color-5 = #fff
-$color-6 = rgba(0,0,0,0.4)
-$color-7 = #36bbf7
-$color-8 = #702df9
-$color-9 = #272d38
+@import "../../assets/css/color"
 
 .menu__window
     height 100%
     width 250px
-    background $color-1
+    background $color-main
     flex-shrink 0
     user-select none
     display flex
@@ -134,11 +126,11 @@ $color-9 = #272d38
     border-radius 3px
 
     &:hover
-        filter drop-shadow(0px 3px 10px $color-2)
+        filter drop-shadow(0px 3px 10px $color-black)
         transition filter 0.25s ease
 
 .menu__window-button
-    background-color $color-3
+    background-color $color-button
     transition background-color 0.25s ease
     border-radius 3px
     cursor pointer
@@ -150,12 +142,12 @@ $color-9 = #272d38
 
     &:hover
         transition background-color 0.25s ease
-        background-color $color-4
+        background-color $color-button-hover
 
     &.noclick
         cursor default
         filter initial
-        background-color $color-3
+        background-color $color-button
 
     &.textbox
         cursor text
@@ -166,7 +158,7 @@ $color-9 = #272d38
         transition box-shadow 0.25s ease-in-out
 
         &:focus
-            box-shadow 0 0 40px $color-6
+            box-shadow 0 0 40px rgba(0,0,0,0.4)
         
         &.px
           width 55px
@@ -176,7 +168,7 @@ $color-9 = #272d38
       -webkit-appearance: none
       width 164px
       height 6px
-      background $color-4
+      background $color-button-hover
       outline none
       margin-left 5%
       float left
@@ -186,7 +178,7 @@ $color-9 = #272d38
         appearance: none
         width: 15px
         height: 15px
-        background linear-gradient(45deg, $color-7 0%, $color-8 100%)
+        background linear-gradient(45deg, $color-button-gradient-1 0%, $color-button-gradient-2 100%)
         box-shadow 0 0 20px rgba(78, 115, 238, .5)
         cursor: pointer
         border-radius: 50%
@@ -200,11 +192,11 @@ $color-9 = #272d38
     bottom 11px
     font-size 17px
     font-weight 300
-    color $color-5
+    color $color-white
     margin 15px 0
 
 .menu__window-button-download
-    background linear-gradient(45deg, $color-7 0%, $color-8 100%)
+    background linear-gradient(45deg, $color-button-gradient-1 0%, $color-button-gradient-2 100%)
     position relative
     z-index 2
     opacity 0.8
@@ -215,7 +207,7 @@ $color-9 = #272d38
         transition opacity 0.25s ease
 
 .menu__window-shadow
-    background linear-gradient(45deg, $color-7 0%, $color-8 100%)
+    background linear-gradient(45deg, $color-button-gradient-1 0%, $color-button-gradient-2 100%)
     filter blur(12px)
     position relative
     height 53px
@@ -236,13 +228,13 @@ $color-9 = #272d38
 
     &:hover
         transition filter 0.25s ease
-        filter drop-shadow(0px 3px 10px $color-2)
+        filter drop-shadow(0px 3px 10px $color-black)
         transition background-color 0.25s ease
-        background-color $color-4
+        background-color $color-button-hover
 
 .menu__window-item-text
     bottom 11px
-    color $color-5
+    color $color-white
     margin 0
 
 .menu__window-scale__container
@@ -257,12 +249,12 @@ $color-9 = #272d38
 
     &:checked
         +label
-            background $color-9
+            background #272d38
             cursor default
 
 .menu__window-scale__label
     transition all 0.25s ease
-    background-color $color-3
+    background-color $color-button
     border-radius 3px
     cursor pointer
     margin-top 5px
@@ -272,19 +264,19 @@ $color-9 = #272d38
     padding 12px
 
     &:hover
-        background $color-4
+        background $color-button-hover
 
 .menu__window-scale__button
     bottom 11px
-    text-shadow 0px 4px 10px $color-2
-    color $color-5
+    text-shadow 0px 4px 10px $color-black
+    color $color-white
 
 .menu__window-credits
     position absolute
     bottom 0
 
 .menu__window-credits-text
-    color $color-5
+    color $color-white
     font-size 11px
     margin-bottom 5px
     margin-top 5px

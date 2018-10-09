@@ -7,16 +7,7 @@
 </template>
 
 <style lang="stylus" scoped>
-
-$color-1 = #12151a
-$color-2 = #000
-$color-3 = #08090b
-$color-4 = #1c2129
-$color-5 = #fff
-$color-6 = rgba(0,0,0,0.4)
-$color-7 = #36bbf7
-$color-8 = #702df9
-$color-9 = #272d38
+@import "../../assets/css/color"
 
 .backgrounds_container
     position absolute
@@ -24,13 +15,13 @@ $color-9 = #272d38
     right 0
     width calc(100% - 250px)
     height 200px
-    background $color-1
+    background $color-main
     transition bottom 300ms ease-in-out
     overflow scroll
     .invetory-item
         width 150px
         height 70px
-        background $color-2
+        background $color-black
         float left 
         margin 2px
         background url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/312510/7551c0e127ea5e79a8106287b124e41b61f982f5.jpg)
@@ -43,11 +34,11 @@ $color-9 = #272d38
         height 25px
         right 9px
         border-radius 10px 0 0 0
-        background $color-1
+        background $color-main
         border-style none
         p
             bottom 5px
-            color $color-5
+            color $color-white
             position relative
     &:hover
         bottom 0

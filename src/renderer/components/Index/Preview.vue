@@ -77,27 +77,14 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-$color-1 = rgba(18, 21, 26, .9)
-$color-3 = #8f98a0
-$color-4 = #57cbde
-$color-5 = rgba(83, 164, 196, 1)
-$color-6 = rgba(69, 128, 151, 1)
-$color-7 = #41778f
-$color-8 = #3d697b
-$color-9 = #262627
-$color-10 = #000
-$color-11 = #898989
-$color-12 = #fff
-$color-13 = #5491cf
-$color-14 = #222223
-
+@import "../../assets/css/color"
 .profile_main_artbox
     width 100%
     height 850px
     background-position -508px -271px
 
 .profile_header_bg
-    background $color-1
+    background $color-main-transparent
     opacity .9
     position relative
     max-width 1018px
@@ -108,7 +95,7 @@ $color-14 = #222223
     background-position center bottom
 
 .profile_background_overlay_content
-    background-color $color-1
+    background-color $color-main-transparent
     position absolute
     top 0
     right 0
@@ -127,7 +114,7 @@ $color-14 = #222223
     background-position top left
     background-repeat no-repeat
     border-radius 3px
-    padding 2px 10px 11px 10px
+    padding 0 10px 11px 10px
     margin-bottom 12px
     font-size 13px
     overflow hidden
@@ -149,24 +136,24 @@ div
         min-width 950px
         background-image url('https://steamcommunity-a.akamaihd.net/public/images/profile/profile_bg.jpg')
         background-repeat repeat-x
-        background-color $color-9
+        background-color #262627
 
         &.has_profile_background
-            background-color $color-10
+            background-color $color-black
             background-position center top
             background-repeat no-repeat
 
 .responsive_page_frame
-    color $color-3
+    color #8f98a0
 
 .playerAvatar
     &.online
-        background-color $color-4
-        background linear-gradient( to bottom, $color-5 5%, $color-6 95%)
+        background-color #57cbde
+        background linear-gradient( to bottom, rgba(83, 164, 196, 1) 5%, rgba(69, 128, 151, 1) 95%)
         filter none
 
         img
-            background linear-gradient( to bottom, $color-7 5%, $color-8 95%)
+            background linear-gradient( to bottom, #41778f 5%, #3d697b 95%)
 
     &.profile_header_size
         position relative
@@ -216,7 +203,7 @@ div
     .persona_name
         line-height 40px
         font-size 24px
-        color $color-12
+        color $color-white
         text-overflow ellipsis
         white-space nowrap
         overflow hidden
@@ -232,7 +219,7 @@ div
 .profile_header_content
     position relative
     padding-top 8px
-    color $color-11
+    color $color-main-transparent1
     font-size 13px
 
 .profile_header_summary
@@ -273,7 +260,7 @@ div
 .profile_customization_header
     font-family "Motiva Sans", Sans-serif
     font-weight 200
-    color $color-13
+    color $color-main-transparent3
     font-size 20px
     line-height 30px
     overflow hidden
@@ -294,7 +281,7 @@ div
         margin-bottom 4px
 
 .screenshot_showcase_screenshot
-    border 1px solid $color-10
+    border 1px solid $color-black
     display block
     white-space nowrap
     overflow hidden
@@ -316,8 +303,8 @@ div
         display block
         height 57px
         line-height 57px
-        background-color $color-14
-        color $color-12
+        background-color #222223
+        color $color-white
 
 .profile_background_holder_content
     position absolute

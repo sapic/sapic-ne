@@ -52,16 +52,12 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-$color-1 = #12151a
-$color-2 = #07080a
-$color-3 = #5f6873
-$color-4 = #f04747
-$color-5 = #fff
+@import "../../assets/css/color"
 
 .titlebar 
   height 40px
   -webkit-app-region drag
-  background-color #12151A
+  background-color $color-main
   user-select none
 
 .actionbuttons
@@ -69,7 +65,7 @@ $color-5 = #fff
     position relative
     width 135px
     height 31px
-    background-color $color-2
+    background-color #07080a
 
 .actionbutton
     height 31px
@@ -85,12 +81,12 @@ $color-5 = #fff
 
     &:hover
         transition background-color 0.25s ease
-        background-color $color-3
+        background-color #5f6873
 
 .closebutton
     &:hover
         transition background-color 0.25s ease
-        background-color $color-4
+        background-color #f04747
 
 .titlelogo
     height 25px
@@ -114,7 +110,7 @@ $color-5 = #fff
         height 28px
 
 .titletext
-    color $color-5
+    color $color-white
     position relative
     bottom -1px
     left 9px
