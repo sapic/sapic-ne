@@ -68,7 +68,7 @@
             .menu__window-scale__button 125%
 
     .menu__window-credits
-      .menu__window-item-discord(@click="$store.dispatch('openDiscord')")
+      .menu__window-item(@click="$store.dispatch('openDiscord')")
         img.menu__window-discord(
           src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
         )
