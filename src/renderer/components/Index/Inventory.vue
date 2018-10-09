@@ -6,7 +6,7 @@
         .invetory-item
 </template>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 $color-1 = #12151a
 $color-2 = #000
@@ -42,7 +42,6 @@ $color-9 = #272d38
         height 25px
         bottom 200px
         right 9px
-        position absolute
         border-radius 10px 0 0 0
         background $color-1
         border-style none

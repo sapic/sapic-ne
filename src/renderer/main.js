@@ -29,10 +29,6 @@ async function setActivity () {
 
 rpc.on('ready', () => {
   setActivity()
-
-  setInterval(() => {
-    setActivity()
-  }, 1500)
 })
 
 rpc.login({ clientId }).catch(console.error)
