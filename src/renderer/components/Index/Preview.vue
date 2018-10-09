@@ -1,110 +1,59 @@
-<template>
-  <div class="responsive_page_frame with_header main-container">
+<template lang="pug">
+.responsive_page_frame.with_header.main-container
+  .responsive_page_content
+    .responsive_page_template_content
+      .no_header.profile_page.has_profile_background(:style="{ backgroundImage: `url('${$store.state.background}')` }")
+        .profile_header_bg
+          .profile_header_bg_texture
+            .profile_header
+              .profile_header_content
+                .profile_header_centered_persona
+                  .persona_name(style='font-size: 24px;')
+                    span.actual_persona_name {{ $store.state.user.screenName }}
+                .playerAvatar.profile_header_size.online
+                  .playerAvatarAutoSizeInner
+                    img.sapicAva(:src='$store.state.user.avatar')
+                .profile_header_badgeinfo
+                  .profile_header_badgeinfo_badge_area
+                  .profile_header_actions
+                .profile_header_summary
+        .profile_content.has_profile_background
+          .profile_background_holder_content
+            .profile_background_overlay_content
+          .profile_content_inner
+            .profile_leftcol
+              .profile_customization_area
+                .profile_customization
+                  .profile_customization_header  
+                  .profile_customization_block
+                    .screenshot_showcase
+                      .screenshot_showcase_primary.showcase_slot
+                        .screenshot_showcase_screenshot
+                          .profile_main_artbox(:style="{ \
+                          backgroundImage: `url('${$store.state.background}')`,\
+                          width: `${$store.state.bgSize.w}px`,\
+                          height: `${$store.state.bgSize.h - 272}px`\
+                          }")  
+                          // <img width="100%" style="max-width: 506px;" :src="$store.state.background">
+                        .screenshot_showcase_itemname
+                      .screenshot_showcase_rightcol
+                        .screenshot_showcase_smallscreenshot.showcase_slot
+                          .screenshot_showcase_screenshot
+                            .profile_main_artbox_side1(:style="{ \
+                            backgroundImage: `url('${$store.state.background}')`,\
+                            width: `${$store.state.bgSize.w}px`,\
+                            height: `${$store.state.bgSize.h - 272}px`\
+                            }")  
+                            // <img width="100%" style="max-width: 100px;" :src="$store.state.background">
+                        .screenshot_showcase_smallscreenshot.screenshot_count
+                          .screenshot_showcase_screenshot   
+  .bgPreloader(:style="{\
+  position: 'fixed',\
+  opacity: 0\
+  }")
+    img(:src='background.steamUrl', v-for='background in nextBackgrounds', v-bind:key='background.url')
+    img(:src='$store.state.background', ref='currentBgHolder', @load='imageUpdated')
 
-    <div class="responsive_page_content">
-
-      <div class="responsive_page_template_content">
-
-        <div class="no_header profile_page has_profile_background " :style="{ backgroundImage: `url('${$store.state.background}')` }">
-
-          <div class="profile_header_bg">
-
-            <div class="profile_header_bg_texture">
-
-              <div class="profile_header">
-
-                <div class="profile_header_content">
-
-                  <div class="profile_header_centered_persona">
-                    <div class="persona_name" style="font-size: 24px;">
-                      <span class="actual_persona_name">{{ $store.state.user.screenName }}</span>
-                    </div>
-                  </div>
-
-                  <div class="playerAvatar profile_header_size online">
-                    <div class="playerAvatarAutoSizeInner"><img class="sapicAva" :src="$store.state.user.avatar"></div>
-                  </div>
-
-                  <div class="profile_header_badgeinfo">
-
-                    <div class="profile_header_badgeinfo_badge_area">
-                    </div>
-
-                    <div class="profile_header_actions">
-                    </div>
-                  </div>
-
-                  <div class="profile_header_summary">
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="profile_content has_profile_background">
-
-            <div class="profile_background_holder_content">
-              <div class="profile_background_overlay_content"></div>
-            </div>
-            <div class="profile_content_inner">
-
-              <div class="profile_leftcol">
-
-                <div class="profile_customization_area">
-
-                  <div class="profile_customization">
-                    <div class="profile_customization_header">&nbsp;</div>
-
-                    <div class="profile_customization_block">
-                      <div class="screenshot_showcase">
-                        <div class="screenshot_showcase_primary showcase_slot">
-                          <div class="screenshot_showcase_screenshot">
-                            <div class="profile_main_artbox" :style="{ 
-                              backgroundImage: `url('${$store.state.background}')`,
-                              width: `${$store.state.bgSize.w}px`,
-                              height: `${$store.state.bgSize.h - 272}px`
-                            }"> </div>
-                            <!-- <img width="100%" style="max-width: 506px;" :src="$store.state.background"> -->
-                          </div>
-                          <div class="screenshot_showcase_itemname">
-                          &nbsp;
-                          </div>
-                        </div>
-                        <div class="screenshot_showcase_rightcol">
-                          <div class="screenshot_showcase_smallscreenshot showcase_slot">
-                            <div class="screenshot_showcase_screenshot">
-                              <div class="profile_main_artbox_side1" :style="{ 
-                                backgroundImage: `url('${$store.state.background}')`,
-                                width: `${$store.state.bgSize.w}px`,
-                                height: `${$store.state.bgSize.h - 272}px`
-                              }"> </div>
-                              <!-- <img width="100%" style="max-width: 100px;" :src="$store.state.background"> -->
-                            </div>
-                          </div>
-                          <div class="screenshot_showcase_smallscreenshot screenshot_count">
-                            <div class="screenshot_showcase_screenshot"> &nbsp;</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bgPreloader" :style="{
-      position: 'fixed',
-      opacity: 0
-    }">
-      <img :src="background.steamUrl" v-for="background in nextBackgrounds" v-bind:key="background.url">
-      <img :src="$store.state.background" ref="currentBgHolder" @load="imageUpdated">
-    </div>
-
-  </div>
 </template>
 
 <script>
