@@ -127,7 +127,7 @@ $color-14 = #222223
     background-position top left
     background-repeat no-repeat
     border-radius 3px
-    padding 0 10px 11px 10px
+    padding 2px 10px 11px 10px
     margin-bottom 12px
     font-size 13px
     overflow hidden
@@ -327,5 +327,4 @@ div
     left 0
     z-index 0
 </style>
-
 <style scoped src="@/assets/css/motiva_sans.css"></style>
