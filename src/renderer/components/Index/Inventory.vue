@@ -2,9 +2,12 @@
 .backgrounds_container
     button.hover-button
         p Inventory
-    - for (let a=0; a < 20; a++)
-        .invetory-item
+    .inventory-list
+        - for (let a=0; a < 20; a++)
+             .invetory-item
 </template>
+
+scrip
 
 <style lang="stylus" scoped>
 @import "../../assets/css/color"
@@ -17,20 +20,24 @@
     height 200px
     background $color-main
     transition bottom 300ms ease-in-out
-    overflow scroll
-    .invetory-item
-        width 150px
-        height 70px
-        background $color-black
-        float left 
-        margin 2px
-        background url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/312510/7551c0e127ea5e79a8106287b124e41b61f982f5.jpg)
-        background-size cover
-    .hover-button
+    overflow-y scroll
+    overflow-x hidden
+    .inventory-list
         position relative
+        top 40px
+        .invetory-item
+           width 150px
+           height 70px
+           background $color-black
+           float left 
+           margin 2px
+           background url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/312510/7551c0e127ea5e79a8106287b124e41b61f982f5.jpg)
+           background-size cover
+    .hover-button
+        position fixed
+        width calc(100% - 250px)
         outline none 
         cursor pointer
-        width 100%
         height 25px
         right 9px
         border-radius 10px 0 0 0
