@@ -60,3 +60,19 @@
             p
                 color transparent
 </style>
+
+<script>
+export default {
+  computed: {
+    bgURL: {
+      set (value) {
+        if (value.match(/\.(?:jpeg|jpg|png)$/i)) {
+          this.$store.commit('setBackgroundURL', value)
+        }
+      },
+      get () {
+      }
+    }
+  }
+}
+</script>
