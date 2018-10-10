@@ -13,12 +13,12 @@
 .backgrounds_container
     position absolute
     bottom -175px
-    right 0
-    width calc(100% - 250px)
+    right 9 px
+    width calc(100% - 259px)
     height 200px
     background $color-main
     transition all 0.25s ease-in-out
-    overflow-y scroll
+    overflow-y hidden
     overflow-x hidden
     
     .inventory-list
@@ -39,11 +39,11 @@
 
     .hover-button
         position fixed
-        width calc(100% - 250px)
+        width calc(100% - 259px)
         outline none 
         cursor pointer
         height 25px
-        right 9px
+        right 18px
         border-radius 10px 0 0 0
         background $color-main
         border-style none
@@ -54,6 +54,7 @@
             transition all 0.25s ease-in-out
     &:hover
         bottom 0
+        overflow-y scroll
         .inventory-list
             opacity 1
         .hover-button

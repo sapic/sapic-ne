@@ -159,7 +159,7 @@ body {
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #12151A;
+  background: #666666;
   transition: background-color 0.25s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -170,7 +170,7 @@ body {
   background: #272d38;
 }
 ::-webkit-scrollbar-track {
-  background: #666666;
+  background: #12151A;
 }
 ::-webkit-scrollbar-track:hover {
   background: #666666;

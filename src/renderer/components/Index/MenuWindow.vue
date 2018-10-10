@@ -68,10 +68,10 @@
             .menu__window-scale__button 125%
 
     .menu__window-credits
-      .menu__window-item-discord(@click="$store.dispatch('openDiscord')")
-        img.menu__window-discord(
-          src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2"
-        )
+      img.menu__window-discord-image(
+        src="https://discordapp.com/api/guilds/304986224467378177/widget.png?style=banner2",
+        @click="$store.dispatch('openDiscord')"
+      )
       .menu__window-credits-text Made with ❤️  by TrueCarry and The Oddball
 
 </template>
@@ -116,7 +116,7 @@ export default {
 .menu__window-section-container
     margin-top 10px
 
-.menu__window-discord
+.menu__window-discord-image
     margin 10px 10px 0 10px
     transition filter 0.25s ease
     text-align center
