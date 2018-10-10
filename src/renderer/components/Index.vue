@@ -56,8 +56,8 @@ export default {
 
       let that = this
 
-      new TWEEN.Tween({tweeningValue: this.animatedScale})
-        .to({tweeningValue: this.previewScale}, 375)
+      new TWEEN.Tween({ tweeningValue: this.animatedScale })
+        .to({ tweeningValue: this.previewScale }, 375)
         .easing(TWEEN.Easing.Quadratic.Out)
         .onUpdate(function (o, n, q) {
           that.animatedScale = o.tweeningValue

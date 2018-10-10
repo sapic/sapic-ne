@@ -3,37 +3,33 @@
   "env": {
     "test": {
       "presets": [
-        ["env", {
-          "targets": { "node": 7 }
-        }],
-        "stage-0"
+        ["@babel/preset-env", {
+          "targets": { "node": 10 }
+        }]
       ],
       "plugins": ["istanbul"]
     },
     "main": {
       "presets": [
-        ["env", {
-          "targets": { "node": 7 }
-        }],
-        "stage-0"
+        ["@babel/preset-env", {
+          "targets": { "node": 10 }
+        }]
       ]
     },
     "renderer": {
       "presets": [
-        ["env", {
-          "modules": false
-        }],
-        "stage-0"
+        ["@babel/preset-env", {
+          "targets": { "node": 10 }
+        }]
       ]
     },
     "web": {
       "presets": [
-        ["env", {
-          "modules": false
-        }],
-        "stage-0"
+        ["@babel/preset-env", {
+          "targets": { "node": 10 }
+        }]
       ]
     }
   },
-  "plugins": ["transform-runtime"]
+  "plugins": ["@babel/transform-runtime"]
 }

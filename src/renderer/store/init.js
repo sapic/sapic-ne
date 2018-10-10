@@ -23,7 +23,7 @@ export default store => {
   curWindow.addListener('unmaximize', e => commit('setIsMaximized', false))
   curWindow.addListener('resize', debounce(() => {
     let [width, height] = curWindow.getSize()
-    commit('setWindowSize', {width, height})
+    commit('setWindowSize', { width, height })
   }, 100, false))
 
   try {
