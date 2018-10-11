@@ -85,7 +85,7 @@
     "cfonts": "^2.2.1",
     "chai": "^4.2.0",
     "chalk": "^2.1.0",
-    "copy-webpack-plugin": "^4.0.1",
+    "copy-webpack-plugin": "^4.5.3",
     "cross-env": "^5.0.5",
     "css-loader": "^1.0.0",
     "del": "^3.0.0",
@@ -133,7 +133,7 @@
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.20.2",
     "webpack-dev-server": "^3.1.9",
-    "webpack-hot-middleware": "^2.18.2",
+    "webpack-hot-middleware": "^2.24.3",
     "webpack-merge": "^4.1.4"
   }
 }

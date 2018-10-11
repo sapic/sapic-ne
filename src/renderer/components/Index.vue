@@ -164,19 +164,19 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   transition: background-color 0.25s ease;
-  background-color: #1c2129;
+  background-color: #8c8c8c;
 }
 ::-webkit-scrollbar-thumb:active {
-  background: #272d38;
+  background: #333333;
 }
 ::-webkit-scrollbar-track {
   background: #12151A;
 }
 ::-webkit-scrollbar-track:hover {
-  background: #666666;
+  background: #1c2129;
 }
 ::-webkit-scrollbar-track:active {
-  background: #333333;
+  background: #272d38;
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
