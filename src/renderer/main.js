@@ -21,7 +21,8 @@ async function setActivity () {
   rpc.setActivity({
     largeImageKey: 'steam_design_massive_png',
     largeImageText: 'Steam.Design',
-    instance: false
+    instance: false,
+    startTimestamp: new Date()
   })
 }
 
