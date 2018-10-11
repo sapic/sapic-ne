@@ -13,6 +13,8 @@ Vue.config.productionTip = false
 const clientId = '477048998176489472'
 const rpc = new DiscordRPC.Client({ transport: 'ipc' })
 
+const time = new Date();
+
 async function setActivity () {
   if (!rpc) {
     return
@@ -22,7 +24,7 @@ async function setActivity () {
     largeImageKey: 'steam_design_massive_png',
     largeImageText: 'Steam.Design',
     instance: false,
-    startTimestamp: new Date()
+    startTimestamp: time
   })
 }
 
