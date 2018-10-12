@@ -68,6 +68,7 @@
     "greenworks": "git+https://github.com/sapic/greenworks.git#cf24d465ae434383be530f1501e94a5133b7816a",
     "jimp": "^0.5.3",
     "path": "^0.12.7",
+    "steamcommunity": "^3.37.1",
     "vue": "^2.5.17",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",
