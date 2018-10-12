@@ -39,9 +39,9 @@ export default store => {
     })
 
     community.login({
-      accountName: 'phantom9696',
-      password: 'ILovePotatoes',
-      twoFactorCode: 'C3T3K'
+      accountName: '',
+      password: '',
+      twoFactorCode: ''
     }, (r, d) => {
       console.log('res', r, d)
     })
