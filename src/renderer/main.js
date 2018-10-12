@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 const clientId = '477048998176489472'
 const rpc = new DiscordRPC.Client({ transport: 'ipc' })
 
-const time = new Date();
+const time = new Date()
 
 async function setActivity () {
   if (!rpc) {
