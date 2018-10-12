@@ -10,7 +10,7 @@ const BabelMinifyWebpack = require('babel-minify-webpack-plugin')
 
 let mainConfig = {
   entry: {
-    main: path.join(__dirname, '../src/main/index.js')
+    main: path.join(__dirname, '../src/main/index.ts')
   },
   externals: [
     ...Object.keys(dependencies || {})
@@ -31,6 +31,11 @@ let mainConfig = {
       {
         test: /\.js$/,
         use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/
       },
       {
