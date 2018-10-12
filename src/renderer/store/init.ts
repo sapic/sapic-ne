@@ -1,8 +1,11 @@
 import { remote } from 'electron'
+import { Store } from 'vuex'
 import greenworks from 'greenworks'
 import Jimp from 'jimp'
 
-export default store => {
+import { RootState, SteamUserInfo } from '../types'
+
+export default (store: Store<RootState>) => {
   let state = JSON.parse(JSON.stringify(store.state))
   const { commit } = store
   const { dispatch } = store
@@ -19,8 +22,8 @@ export default store => {
   commit('setIsMaximized', curWindow.isMaximized())
 
   // Add resize listeners
-  curWindow.addListener('maximize', e => commit('setIsMaximized', true))
-  curWindow.addListener('unmaximize', e => commit('setIsMaximized', false))
+  curWindow.addListener('maximize', () => commit('setIsMaximized', true))
+  curWindow.addListener('unmaximize', () => commit('setIsMaximized', false))
   curWindow.addListener('resize', debounce(() => {
     let [width, height] = curWindow.getSize()
     commit('setWindowSize', { width, height })
@@ -31,13 +34,15 @@ export default store => {
     greenworks.init()
     store.commit('setGreenworks', greenworks)
 
-    let user = greenworks.getSteamId()
+    let user: SteamUserInfo = greenworks.getSteamId()
 
     store.commit('setUser', user)
 
-    greenworks.on('avatar-image-loaded', async (steamid, handler) => {
+    greenworks.on('avatar-image-loaded', async (steamid: string, handler: number) => {
       if (handler < 1) return
-      let avatarBuffer = await imageFromHandler(handler)
+      if (steamid !== store.state.user.steamId) return
+
+      let avatarBuffer: string = await imageFromHandler(handler)
 
       let user = store.state.user
       user.avatar = avatarBuffer
@@ -57,41 +62,46 @@ export default store => {
   }
 }
 
-function debounce (func, wait, immediate) {
-  var timeout
+function debounce (func: any, wait: number, immediate: boolean) {
+  var timeout: number
   return function () {
-    var context = this
+    var context: any = this
     var args = arguments
     var later = function () {
       timeout = null
       if (!immediate) func.apply(context, args)
     }
     var callNow = immediate && !timeout
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
+    window.clearTimeout(timeout)
+    timeout = window.setTimeout(later, wait)
     if (callNow) func.apply(context, args)
   }
 }
 
-async function imageFromHandler (handle) {
+async function imageFromHandler (handle: number): Promise<string> {
   var imageBuffer = greenworks.getImageRGBA(handle)
   var size = greenworks.getImageSize(handle)
   if (!size.height || !size.width) {
     console.log('Image corrupted. Please try again')
-    return
+    return ''
   }
+  console.log('getImageFrom handler', size.height, size.width)
   var image = await new Jimp(size.height, size.width)
   for (var i = 0; i < size.height; ++i) {
     for (var j = 0; j < size.width; ++j) {
       var idx = 4 * (i * size.height + j)
-      var hex = Jimp.rgbaToInt(imageBuffer[idx], imageBuffer[idx + 1],
-        imageBuffer[idx + 2], imageBuffer[idx + 3])
+
+      var hex: number = (imageBuffer[idx] * (1 << 24))
+          + (imageBuffer[idx + 1] << 16)
+          + (imageBuffer[idx + 2] << 8)
+          + (imageBuffer[idx + 3])
+
       image.setPixelColor(hex, j, i)
     }
   }
 
   image.quality(90)
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     image.getBase64('image/jpeg', (err, image) => {
       if (err) return reject(err)
       return resolve(image)
