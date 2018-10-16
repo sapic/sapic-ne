@@ -1,4 +1,4 @@
-import { remote } from 'electron'
+import { remote, ipcRenderer } from 'electron'
 import { Store } from 'vuex'
 import greenworks from 'greenworks'
 import Jimp from 'jimp'
@@ -6,6 +6,12 @@ import Jimp from 'jimp'
 import { RootState, SteamUserInfo } from '../types'
 
 export default (store: Store<RootState>) => {
+
+  ipcRenderer.send('axios', '1222', 'https://google.com')
+  ipcRenderer.once('axios:1222', (a, b) => {
+    console.log('got ipc response',a,b)
+  })
+
   let state = JSON.parse(JSON.stringify(store.state))
   const { commit } = store
   const { dispatch } = store

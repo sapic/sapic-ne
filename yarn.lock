@@ -2965,6 +2965,12 @@ debug@^3.0.0, debug@^3.1.0:
   dependencies:
     ms "^2.1.1"
 
+debug@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.0.tgz#373687bffa678b38b1cd91f861b63850035ddc87"
+  dependencies:
+    ms "^2.1.1"
+
 debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
@@ -8387,6 +8393,12 @@ smart-buffer@^1.0.13:
 smart-buffer@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.0.1.tgz#07ea1ca8d4db24eb4cac86537d7d18995221ace3"
+
+"smipc@https://github.com/TrueCarry/smipc":
+  version "1.0.0"
+  resolved "https://github.com/TrueCarry/smipc#ef89fcceee05c81ba8eac6999d2e5211e280d3f1"
+  dependencies:
+    debug "^4.1.0"
 
 snake-case@^2.1.0:
   version "2.1.0"

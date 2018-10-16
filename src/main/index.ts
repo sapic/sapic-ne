@@ -1,6 +1,8 @@
-'use strict'
+import { app, BrowserWindow, ipcMain } from 'electron'
 
-import { app, BrowserWindow } from 'electron'
+import IPCServer from './ipc'
+
+const ipc = new IPCServer(ipcMain)
 
 /**
  * Set `__static` path to static files in production
