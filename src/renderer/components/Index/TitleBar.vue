@@ -1,22 +1,64 @@
 <template>
   <section class="titlebar">
-    <div class="resizeHandle resizeHandleTop"></div>
-    <div class="resizeHandle resizeHandleLeft"></div>
-    <img class="titlelogo" src="@/assets/images/logo.png">
-    <span class="titletext"> Steam.Design</span>
+    <div class="resizeHandle resizeHandleTop" />
+    <div class="resizeHandle resizeHandleLeft" />
+    <img
+      class="titlelogo"
+      src="@/assets/images/logo.png"
+    >
+    <span class="titletext">
+      Steam.Design
+    </span>
     <div class="actionbuttons">
-      <button class="minimizebutton actionbutton" @click="minimize"><svg aria-hidden="true" version="1.1" width="10" height="10"><path d="M 0,5 10,5 10,6 0,6 Z"></path></svg></button>
-      <button class="maxmimizebutton actionbutton" @click="maximize">
-        <svg :class="isMax ? 'hidden' : ''" aria-hidden="true" version="1.1" width="10" height="10" v-if="!isMax">
-          <path d="M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z"></path>
-        </svg>
-        <svg :class="isMax ? '' : 'hidden'" aria-hidden="true" version="1.1" width="10" height="10" v-else>
-          <path d="m 2,1e-5 0,2 -2,0 0,8 8,0 0,-2 2,0 0,-8 z m 1,1 6,0 0,6 -1,0 0,-5 -5,0 z m -2,2 6,0 0,6 -6,0 z"></path>
+      <button
+        class="minimizebutton actionbutton"
+        @click="minimize"
+      >
+        <svg
+          aria-hidden="true"
+          version="1.1"
+          width="10"
+          height="10"
+        >
+          <path d="M 0,5 10,5 10,6 0,6 Z" />
         </svg>
       </button>
-      <button class="closebutton actionbutton" @click="close">
-        <svg aria-hidden="true" version="1.1" width="10" height="10">
-          <path d="M 0,0 0,0.7 4.3,5 0,9.3 0,10 0.7,10 5,5.7 9.3,10 10,10 10,9.3 5.7,5 10,0.7 10,0 9.3,0 5,4.3 0.7,0 Z"></path>
+      <button
+        class="maxmimizebutton actionbutton"
+        @click="maximize"
+      >
+        <svg
+          v-if="!isMax"
+          :class="isMax ? 'hidden' : ''"
+          aria-hidden="true"
+          version="1.1"
+          width="10"
+          height="10"
+        >
+          <path d="M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z" />
+        </svg>
+        <svg
+          v-else
+          :class="isMax ? '' : 'hidden'"
+          aria-hidden="true"
+          version="1.1"
+          width="10"
+          height="10"
+        >
+          <path d="m 2,1e-5 0,2 -2,0 0,8 8,0 0,-2 2,0 0,-8 z m 1,1 6,0 0,6 -1,0 0,-5 -5,0 z m -2,2 6,0 0,6 -6,0 z" />
+        </svg>
+      </button>
+      <button
+        class="closebutton actionbutton"
+        @click="close"
+      >
+        <svg
+          aria-hidden="true"
+          version="1.1"
+          width="10"
+          height="10"
+        >
+          <path d="M 0,0 0,0.7 4.3,5 0,9.3 0,10 0.7,10 5,5.7 9.3,10 10,10 10,9.3 5.7,5 10,0.7 10,0 9.3,0 5,4.3 0.7,0 Z" />
         </svg>
       </button>
     </div>
@@ -25,6 +67,14 @@
 
 <script>
 export default {
+  computed: {
+    curWindow () {
+      return this.$store.state.currWindow
+    },
+    isMax () {
+      return this.$store.state.isMaximized // pbbl wont work
+    }
+  },
   methods: {
     close () {
       this.curWindow.close()
@@ -39,14 +89,6 @@ export default {
     minimize () {
       this.curWindow.minimize()
     }
-  },
-  computed: {
-    curWindow () {
-      return this.$store.state.currWindow
-    },
-    isMax () {
-      return this.$store.state.isMaximized // pbbl wont work
-    }
   }
 }
 </script>
@@ -54,7 +96,7 @@ export default {
 <style scoped lang="stylus">
 @import "../../assets/css/color"
 
-.titlebar 
+.titlebar
   height 40px
   -webkit-app-region drag
   background-color $color-main

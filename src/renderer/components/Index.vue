@@ -1,21 +1,21 @@
 <template>
   <div class="wrapper">
-    <title-bar />
+    <TitleBar />
     <section class="body__wrapper">
-      <menu-window />
+      <MenuWindow />
       <div class="preview__window">
-        <div 
-        class="zoom_out" 
-        :style="{
-          transform: `scale(${scalePercent})`,
-          width: `calc(100% / ${scalePercent}) !important`,
-          height: `calc(100% / ${scalePercent}) !important`,
-        }"
+        <div
+          class="zoom_out"
+          :style="{
+            transform: `scale(${scalePercent})`,
+            width: `calc(100% / ${scalePercent}) !important`,
+            height: `calc(100% / ${scalePercent}) !important`,
+          }"
         >
-          <preview class="" />
+          <Preview class="" />
         </div>
       </div>
-      <inventory />
+      <Inventory />
     </section>
   </div>
 </template>
@@ -140,7 +140,6 @@ body {
   font-family: "open sans";
   overflow: hidden;
 }
-
 
 #app {
   height: 100%;

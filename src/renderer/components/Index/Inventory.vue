@@ -20,7 +20,7 @@
     transition all 0.25s ease-in-out
     overflow-y hidden
     overflow-x hidden
-    
+
     .inventory-list
         position relative
         background $color-black
@@ -32,7 +32,7 @@
            height 70px
            border-radius 5px
            background $color-black
-           float left 
+           float left
            margin 2px
            background url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/312510/7551c0e127ea5e79a8106287b124e41b61f982f5.jpg)
            background-size cover
@@ -40,7 +40,7 @@
     .hover-button
         position fixed
         width calc(100% - 259px)
-        outline none 
+        outline none
         cursor pointer
         height 25px
         right 18px
@@ -65,6 +65,7 @@
 <script>
 export default {
   computed: {
+    /* eslint-disable */
     bgURL: {
       set (value) {
         if (value.match(/\.(?:jpeg|jpg|png)$/i)) {
@@ -74,6 +75,7 @@ export default {
       get () {
       }
     }
+    /* eslint-enable */
   }
 }
 </script>

@@ -8,16 +8,16 @@
 
       .menu__window-button(@click="$store.dispatch('randomBackground')")
         .menu__window-button-text Random BG
-      
+
       .menu__window-button(@click="$store.dispatch('getCurrentBg')")
         .menu__window-button-text Get this BG
 
-      input.menu__window-button.textbox.noclick#urltextbox(placeholder="Paste a background URL here", v-model="bgURL")  
+      input.menu__window-button.textbox.noclick#urltextbox(placeholder="Paste a background URL here", v-model="bgURL")
 
-      .menu__window-section-container    
-        .menu__window-button.noclick.small 
+      .menu__window-section-container
+        .menu__window-button.noclick.small
           .menu__window-button-text Image Height
-        
+
         input.menu__window-button.length__slider(type="range")
         input.menu__window-button.textbox.px(placeholder="px")
 
@@ -44,7 +44,7 @@
             v-model="previewScale"
             id="scale75"
           )
-          label(for="scale75").menu__window-scale__label 
+          label(for="scale75").menu__window-scale__label
             .menu__window-scale__button 75%
 
           input.menu__window-scale__input(
@@ -53,7 +53,7 @@
             value="100"
             v-model="previewScale"
             id="scale100"
-          ) 
+          )
           label(for="scale100").menu__window-scale__label
             .menu__window-scale__button 100%
 
@@ -87,6 +87,7 @@ export default {
         this.$store.commit('setPreviewScale', value)
       }
     },
+    /* eslint-disable */
     bgURL: {
       set (value) {
         if (value.match(/\.(?:jpeg|jpg|png)$/i)) {
@@ -96,6 +97,7 @@ export default {
       get () {
       }
     }
+    /* eslint-enable */
   }
 }
 </script>
@@ -159,7 +161,7 @@ export default {
 
         &:focus
             box-shadow 0 0 40px rgba(0,0,0,0.4)
-        
+
         &.px
           width 55px
 
@@ -172,7 +174,7 @@ export default {
       outline none
       margin-left 5%
       float left
-        
+
       &::-webkit-slider-thumb
         -webkit-appearance: none
         appearance: none

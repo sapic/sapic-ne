@@ -24,7 +24,7 @@
             .profile_leftcol
               .profile_customization_area
                 .profile_customization
-                  .profile_customization_header  
+                  .profile_customization_header
                   .profile_customization_block
                     .screenshot_showcase
                       .screenshot_showcase_primary.showcase_slot
@@ -33,7 +33,7 @@
                           backgroundImage: `url('${$store.state.background}')`,\
                           width: `${$store.state.bgSize.w}px`,\
                           height: `${$store.state.bgSize.h - 272}px`\
-                          }")  
+                          }")
                           // <img width="100%" style="max-width: 506px;" :src="$store.state.background">
                         .screenshot_showcase_itemname
                       .screenshot_showcase_rightcol
@@ -43,10 +43,10 @@
                             backgroundImage: `url('${$store.state.background}')`,\
                             width: `${$store.state.bgSize.w}px`,\
                             height: `${$store.state.bgSize.h - 272}px`\
-                            }")  
+                            }")
                             // <img width="100%" style="max-width: 100px;" :src="$store.state.background">
                         .screenshot_showcase_smallscreenshot.screenshot_count
-                          .screenshot_showcase_screenshot   
+                          .screenshot_showcase_screenshot
   .bgPreloader(:style="{\
   position: 'fixed',\
   opacity: 0\
