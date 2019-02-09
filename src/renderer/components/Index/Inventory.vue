@@ -3,8 +3,9 @@
     button.hover-button
         p Inventory
     .inventory-list
-        - for (let a=0; a < 20; a++)
-             .invetory-item
+        - for (let a=0; a < 200; a++)
+            .inventory-item
+              img.inventory-item-inner(src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxH5rd9eDAjcFyv45SRYAFMIcKL_PArgVSL403ulRUWEndVKv7h5yEBA07J1FWtb-kLgY1h_CZKW4QtdnmwoXck6-tZr6Gw2hSu5Ih3-jA9t6hjBq-uxQgScqCxQ/96fx96f")
 </template>
 
 <style lang="stylus" scoped>
@@ -23,20 +24,22 @@
 
     .inventory-list
         position relative
-        background $color-black
         top 0px
         opacity 0
         transition all 0.25s ease-in-out
-        .invetory-item
-           width 150px
-           height 70px
-           border-radius 5px
-           background $color-black
-           float left
-           margin 2px
-           background url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/312510/7551c0e127ea5e79a8106287b124e41b61f982f5.jpg)
-           background-size cover
-
+        .inventory-item
+          margin 5px
+          float left
+          width 98px
+          height 98px
+          border-radius 2px
+          background url(https://steamcommunity-a.akamaihd.net/public/images/economy/trade_itemholder.png)
+          background-position top
+          background-repeat no-repeat
+          .inventory-item-inner
+            width 92px
+            margin-top 4px
+            margin-left 4px
     .hover-button
         position fixed
         width calc(100% - 259px)

@@ -20,10 +20,11 @@ async function setActivity (): Promise<void> {
   }
 
   rpc.setActivity({
-    largeImageKey: 'steam_design_massive_png',
+    largeImageKey: 'l0gograd',
     largeImageText: 'Steam.Design',
     instance: false,
-    startTimestamp: time
+    startTimestamp: time,
+    state: "Making a Profile"
   })
 }
 
