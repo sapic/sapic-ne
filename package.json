@@ -61,6 +61,7 @@
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "@tweenjs/tween.js": "^17.2.0",
+    "ajv": "^6.8.1",
     "axios": "^0.18.0",
     "discord-rpc": "^3.0.1",
     "electron-updater": "^4.0.6",
