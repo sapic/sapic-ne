@@ -32,7 +32,7 @@
           float left
           width 98px
           height 98px
-          border-radius 2px
+          cursor pointer
           background url(https://steamcommunity-a.akamaihd.net/public/images/economy/trade_itemholder.png)
           background-position top
           background-repeat no-repeat

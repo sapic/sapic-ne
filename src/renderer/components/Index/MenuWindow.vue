@@ -12,6 +12,9 @@
       .menu__window-button(@click="$store.dispatch('getCurrentBg')")
         .menu__window-button-text Get this BG
 
+      .menu__window-button(@click="$store.dispatch('loadBackpack')")
+        .menu__window-button-text Test Inventory Loader
+
       input.menu__window-button.textbox.noclick#urltextbox(placeholder="Paste a background URL here", v-model="bgURL")
 
       .menu__window-section-container

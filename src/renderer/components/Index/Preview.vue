@@ -85,7 +85,6 @@ export default {
 
 .profile_header_bg
     background $color-main-transparent
-    opacity .9
     position relative
     max-width 1018px
     min-height 224px

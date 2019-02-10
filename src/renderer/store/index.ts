@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import request from 'ajax-request'
 import { shell, BrowserWindow } from 'electron'
 // import fs from 'fs'
 
@@ -26,16 +27,6 @@ let state: RootState = {
     h: 0
   }
 }
-
-// try {
-//   let snapshot = fs.readFileSync('.vuexsnapshot', { encoding: 'UTF-8' })
-//   if (snapshot) {
-//     let decoded = JSON.parse(snapshot)
-//     state = Object.assign(state, decoded)
-//   }
-// } catch (e) {
-//   console.log('No settings snapshot')
-// }
 
 export const store = new Vuex.Store({
   plugins: [init, broadcaster],
@@ -129,6 +120,14 @@ export const store = new Vuex.Store({
         ? 'https://steamcommunity.com/market/listings/' + state.bgInfo.url
         : 'https://images.google.com/searchbyimage?image_url=' + state.background
       shell.openExternal(_goUrl)
+    },
+    loadBackpack ({ state }) {
+      request({
+        url: 'https://steam.design/backpack/' + state.user.steamId + '/items.json',
+        method: 'GET'
+      }, function(err, res, data) {
+        console.log(err, res, data)
+      });
     }
   }
 })
