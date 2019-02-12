@@ -60,6 +60,7 @@ export default (store: Store<RootState>) => {
     console.log('Can\'t init greenworks')
     store.commit('setUser', 0)
   }
+  dispatch('loadBackpack')
 }
 
 function debounce (func: any, wait: number, immediate: boolean) {
