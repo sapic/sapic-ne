@@ -18,6 +18,7 @@ export interface RootState {
     w: number
     h: number
   }
+  inventory: []
 }
 
 export interface BackgroundInfo {

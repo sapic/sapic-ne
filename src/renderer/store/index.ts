@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import request from 'ajax-request'
+import axios from 'axios'
 import { shell, BrowserWindow } from 'electron'
 // import fs from 'fs'
 
@@ -25,15 +25,17 @@ let state: RootState = {
   bgSize: {
     w: 0,
     h: 0
-  }
+  },
+  inventory: [],
 }
 
 export const store = new Vuex.Store({
   plugins: [init, broadcaster],
   state: state,
   mutations: {
-    setBackground (state, background) {
+    setBackground (state, {background, info}) {
       state.background = background
+      state.bgInfo = info
     },
     setBackgroundURL (state, value) {
       state.background = value
@@ -93,7 +95,10 @@ export const store = new Vuex.Store({
         ...state.user,
         avatar: avatar
       }
-    }
+    },
+    setInventoryBackgrounds (state, items) {
+      state.inventory = items
+    },
   },
   actions: {
     downloadZip ({ state }) {
@@ -109,25 +114,25 @@ export const store = new Vuex.Store({
       let url = 'https://steam.design/raw/' + btoa(JSON.stringify(bgSaveInfo))
       shell.openExternal(url)
     },
+
     openDiscord () {
       shell.openExternal('https://discord.gg/jnqnHuX')
     },
+
     randomBackground ({ commit }) {
       commit('randomBackground')
     },
+
     getCurrentBg ({ state }) {
       var _goUrl = state.bgInfo && state.bgInfo.url
         ? 'https://steamcommunity.com/market/listings/' + state.bgInfo.url
         : 'https://images.google.com/searchbyimage?image_url=' + state.background
       shell.openExternal(_goUrl)
     },
-    loadBackpack ({ state }) {
-      request({
-        url: 'https://steam.design/backpack/' + state.user.steamId + '/items.json',
-        method: 'GET'
-      }, function(err, res, data) {
-        console.log(err, res, data)
-      });
+
+    async loadBackpack ({ commit }) {
+      const { data } = await axios(`https://steam.design/backpack/${state.user.steamId}/items.json`)
+      commit('setInventoryBackgrounds', data.backgrounds)
     }
   }
 })

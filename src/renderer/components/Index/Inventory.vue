@@ -3,9 +3,9 @@
     button.hover-button
         p Inventory
     .inventory-list
-        - for (let a=0; a < 200; a++)
-            .inventory-item
-              img.inventory-item-inner(src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxH5rd9eDAjcFyv45SRYAFMIcKL_PArgVSL403ulRUWEndVKv7h5yEBA07J1FWtb-kLgY1h_CZKW4QtdnmwoXck6-tZr6Gw2hSu5Ih3-jA9t6hjBq-uxQgScqCxQ/96fx96f")
+      template(v-for="item in items")
+        .inventory-item(:key="item.id" @click="setBackground(item)")
+          img.inventory-item-inner(:src="`https://steamcommunity-a.akamaihd.net/economy/image/${item.icon_url_large}/96fx96f`")
 </template>
 
 <style lang="stylus" scoped>
@@ -77,8 +77,20 @@ export default {
       },
       get () {
       }
-    }
+    },
     /* eslint-enable */
+    items () {
+      return this.$store.state.inventory
+    }
+  },
+
+  methods: {
+    setBackground (item) {
+      this.$store.commit('setBackground', {
+        background: item.actions[0].link,
+        info: item
+      })
+    }
   }
 }
 </script>
