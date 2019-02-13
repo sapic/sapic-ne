@@ -36,6 +36,8 @@ export const store = new Vuex.Store({
     setBackground (state, {background, info}) {
       state.background = background
       state.bgInfo = info
+
+      state.nextRandomBackgrounds.push(state.nextRandomBackgrounds.pop())
     },
     setBackgroundURL (state, value) {
       state.background = value
