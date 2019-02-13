@@ -11,7 +11,7 @@ import { RootState, BackgroundInfo, SteamUserInfo, EmptyUser } from '../types'
 Vue.use(Vuex)
 
 let state: RootState = {
-  // background: null,
+  background: null,
   // bgInfo: BackgroundInfo(),
   backgrounds: Array<BackgroundInfo>(),
   nextRandomBackgrounds: Array<BackgroundInfo>(),
@@ -36,8 +36,6 @@ export const store = new Vuex.Store({
     setBackground (state, {background, info}) {
       state.background = background
       state.bgInfo = info
-
-      state.nextRandomBackgrounds.push(state.nextRandomBackgrounds.pop())
     },
     setBackgroundURL (state, value) {
       state.background = value
