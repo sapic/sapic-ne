@@ -57,7 +57,7 @@ export default {
         }
       }
 
-      let that = this
+      const that = this
 
       new TWEEN.Tween({ tweeningValue: this.animatedScale })
         .to({ tweeningValue: this.previewScale }, 375)

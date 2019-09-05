@@ -24,7 +24,10 @@ function createWindow () {
     width: 1280,
     height: 720,
     minWidth: 1220,
-    minHeight: 550
+    minHeight: 550,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
 
   mainWindow.loadURL(winURL)
