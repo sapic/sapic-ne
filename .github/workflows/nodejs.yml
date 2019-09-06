@@ -1,4 +1,4 @@
-name: Node CI
+name: Build Steam.Design Desktop
 
 on: [push]
 
@@ -28,4 +28,4 @@ jobs:
       env:
         STEAMWORKS_SDK_PATH: /home/runner/work/sapic-ne/sdk/sdk
     - name: Build
-      run: echo "hi"
+      run: yarn build
