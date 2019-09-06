@@ -22,10 +22,10 @@ jobs:
     - name: Download Steamworks SDK
       run: git clone https://github.com/TrueCarry/stmwrkssdk ../sdk
     - name: Yarn Install
-      run: |
-        echo $STEAMWORKS_SDK_PATH
-        yarn install
+      run: yarn install
       env:
         STEAMWORKS_SDK_PATH: /home/runner/work/sapic-ne/sdk/sdk
     - name: Build
       run: yarn build
+      env:
+        STEAMWORKS_SDK_PATH: /home/runner/work/sapic-ne/sdk/sdk
