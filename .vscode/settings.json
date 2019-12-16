@@ -24,5 +24,8 @@
   "vetur.format.defaultFormatter.js": "none",
   "vetur.validation.script": false,
   "vetur.validation.style": false,
-  "vetur.format.defaultFormatter.ts": "none"
+  "vetur.format.defaultFormatter.ts": "none",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
