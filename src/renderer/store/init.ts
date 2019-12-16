@@ -1,6 +1,6 @@
 import { remote } from 'electron'
 import { Store } from 'vuex'
-import greenworks from 'greenworks'
+import greenworks from '../../../lib/greenworks/greenworks.js'
 import Jimp from 'jimp'
 
 import { RootState, SteamUserInfo } from '../types'
