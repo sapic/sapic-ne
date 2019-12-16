@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import { shell, BrowserWindow } from 'electron'
+import { shell } from 'electron'
 // import fs from 'fs'
 
 import broadcaster from './broadcaster'
 import init from './init'
-import { RootState, BackgroundInfo, SteamUserInfo, EmptyUser } from '../types'
+import { RootState, BackgroundInfo, EmptyUser } from '../types'
 
 Vue.use(Vuex)
 
-let state: RootState = {
+const state: RootState = {
   background: null,
   // bgInfo: BackgroundInfo(),
   backgrounds: Array<BackgroundInfo>(),
@@ -26,14 +26,14 @@ let state: RootState = {
     w: 0,
     h: 0
   },
-  inventory: [],
+  inventory: []
 }
 
 export const store = new Vuex.Store({
   plugins: [init, broadcaster],
   state: state,
   mutations: {
-    setBackground (state, {background, info}) {
+    setBackground (state, { background, info }) {
       state.background = background
       state.bgInfo = info
     },
@@ -98,20 +98,20 @@ export const store = new Vuex.Store({
     },
     setInventoryBackgrounds (state, items) {
       state.inventory = items
-    },
+    }
   },
   actions: {
     downloadZip ({ state }) {
-      let bgSaveInfo = {
+      const bgSaveInfo = {
         url: state.background,
         images: [
-          { name: 'Artwork_Middle.png', 'x': 508, 'y': 298, 'w': 506, 'h': 2000 },
-          { name: 'Artwork_Right_Top.png', 'x': 1022, 'y': 298, 'w': 100, 'h': 2000 },
-          { name: 'Avatar.png', 'x': 499, 'y': 34, 'w': 164, 'h': 164 }
+          { name: 'Artwork_Middle.png', x: 508, y: 298, w: 506, h: 2000 },
+          { name: 'Artwork_Right_Top.png', x: 1022, y: 298, w: 100, h: 2000 },
+          { name: 'Avatar.png', x: 499, y: 34, w: 164, h: 164 }
         ]
       }
 
-      let url = 'https://steam.design/raw/' + btoa(JSON.stringify(bgSaveInfo))
+      const url = 'https://steam.design/raw/' + btoa(JSON.stringify(bgSaveInfo))
       shell.openExternal(url)
     },
 

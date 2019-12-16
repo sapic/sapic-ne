@@ -6,7 +6,7 @@ import Jimp from 'jimp'
 import { RootState, SteamUserInfo } from '../types'
 
 export default (store: Store<RootState>) => {
-  let state = JSON.parse(JSON.stringify(store.state))
+  const state = JSON.parse(JSON.stringify(store.state))
   const { commit } = store
   const { dispatch } = store
 
@@ -25,7 +25,7 @@ export default (store: Store<RootState>) => {
   curWindow.addListener('maximize', () => commit('setIsMaximized', true))
   curWindow.addListener('unmaximize', () => commit('setIsMaximized', false))
   curWindow.addListener('resize', debounce(() => {
-    let [width, height] = curWindow.getSize()
+    const [width, height] = curWindow.getSize()
     commit('setWindowSize', { width, height })
   }, 100, false))
 
@@ -34,7 +34,7 @@ export default (store: Store<RootState>) => {
     greenworks.init()
     store.commit('setGreenworks', greenworks)
 
-    let user: SteamUserInfo = greenworks.getSteamId()
+    const user: SteamUserInfo = greenworks.getSteamId()
 
     store.commit('setUser', user)
 
@@ -42,14 +42,14 @@ export default (store: Store<RootState>) => {
       if (handler < 1) return
       if (steamid !== store.state.user.steamId) return
 
-      let avatarBuffer: string = await imageFromHandler(handler)
+      const avatarBuffer: string = await imageFromHandler(handler)
 
-      let user = store.state.user
+      const user = store.state.user
       user.avatar = avatarBuffer
       store.commit('setUser', user)
     })
 
-    let handler = greenworks.getLargeFriendAvatar(user.steamId)
+    const handler = greenworks.getLargeFriendAvatar(user.steamId)
 
     if (handler > 0) {
       imageFromHandler(handler).then((avatarBuffer) => {
@@ -92,10 +92,10 @@ async function imageFromHandler (handle: number): Promise<string> {
     for (var j = 0; j < size.width; ++j) {
       var idx = 4 * (i * size.height + j)
 
-      var hex: number = (imageBuffer[idx] * (1 << 24))
-          + (imageBuffer[idx + 1] << 16)
-          + (imageBuffer[idx + 2] << 8)
-          + (imageBuffer[idx + 3])
+      var hex: number = (imageBuffer[idx] * (1 << 24)) +
+        (imageBuffer[idx + 1] << 16) +
+        (imageBuffer[idx + 2] << 8) +
+        (imageBuffer[idx + 3])
 
       image.setPixelColor(hex, j, i)
     }
