@@ -239,6 +239,9 @@ export default {
     color $color-white
     margin 0
 
+#urltextbox
+  color white
+
 .menu__window-scale__container
     display flex
     flex-direction row
