@@ -1,0 +1,41 @@
+name: Build and Upload
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Add Build Tools
+        run: yarn global add build-tools
+      - name: Yarn Install
+        run: yarn install --frozen-lockfile
+      - name: Build
+        run: yarn build
+      - name: Download Steamworks SDK
+        run: git clone https://github.com/TrueCarry/stmwrkssdk sdk
+      - name: Place sentry
+        run: |
+          $filename = "./sdk/sdk/tools/ContentBuilder/builder/${{ secrets.STEAM_SENTRY_NAME }}"
+          $filecontent = "${{ secrets.STEAM_SENTRY_CONTENT }}"
+          [IO.File]::WriteAllBytes($filename, [Convert]::FromBase64String($filecontent))
+      - name: Update description
+        run: sed -i -e "s|{{desc}}|$GITHUB_REF - $GITHUB_SHA|g" ./steam_build/scripts/app_build_853520.vdf
+        shell: bash
+      - name: Build SteamDepot
+        run: |
+          ./sdk/sdk/tools/ContentBuilder/builder/steamcmd.exe +login ${{ secrets.STEAM_LOGIN }} ${{ secrets.STEAM_PASSWORD }} +run_app_build ../../../../../steam_build/scripts/app_build_853520.vdf +exit || true
+        shell: bash

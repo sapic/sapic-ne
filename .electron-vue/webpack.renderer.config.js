@@ -65,7 +65,11 @@ let rendererConfig = {
       },
       {
         test: /\.node$/,
-        use: 'node-loader'
+        loader: 'native-ext-loader',
+        options: {
+          rewritePath: process.env.NODE_ENV === 'production' ? "./" : undefined,
+          emit: false,
+        }
       },
       {
         test: /\.vue$/,
@@ -182,7 +186,7 @@ if (process.env.NODE_ENV === 'production') {
       {
         from: path.join(__dirname, '../static'),
         to: path.join(__dirname, '../dist/electron/static'),
-        ignore: ['.*']
+        ignore: ['^\.*']
       }
     ]),
     new webpack.DefinePlugin({

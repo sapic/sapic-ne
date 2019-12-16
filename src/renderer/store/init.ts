@@ -57,7 +57,7 @@ export default (store: Store<RootState>) => {
       })
     }
   } catch (e) {
-    console.log('Can\'t init greenworks')
+    console.log('Can\'t init greenworks', e)
     store.commit('setUser', 0)
   }
   dispatch('loadBackpack')
