@@ -7,7 +7,7 @@
       src="@/assets/images/logo.png"
     >
     <span class="titletext">
-      Steam.Design
+      Profile Background Cropper
     </span>
     <div class="actionbuttons">
       <button
@@ -134,7 +134,7 @@ export default {
     height 25px
     width 25px
     position relative
-    top 7px
+    top 7.5px
     left 7px
 
 .resizeHandle
@@ -157,6 +157,6 @@ export default {
     bottom -1px
     left 9px
     font-weight 100
-    font-size 20px
+    font-size 16px
 
 </style>
