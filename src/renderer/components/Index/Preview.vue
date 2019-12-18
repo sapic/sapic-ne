@@ -66,6 +66,10 @@ export default {
   methods: {
     imageUpdated () {
       if (this.$refs.currentBgHolder.naturalHeight && this.$refs.currentBgHolder.naturalWidth) {
+        this.$store.commit('setBgNaturalSize', {
+          w: this.$refs.currentBgHolder.naturalWidth,
+          h: this.$refs.currentBgHolder.naturalHeight
+        })
         this.$store.commit('setBgSize', {
           w: this.$refs.currentBgHolder.naturalWidth,
           h: this.$refs.currentBgHolder.naturalHeight

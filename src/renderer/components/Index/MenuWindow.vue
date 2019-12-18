@@ -18,8 +18,16 @@
         .menu__window-button.noclick.small
           .menu__window-button-text Image Height
 
-        input.menu__window-button.length__slider(type="range")
-        input.menu__window-button.textbox.px(placeholder="px")
+        input.menu__window-button.length__slider(
+          type="range"
+          v-model.number="bgHeight"
+          min="556"
+          :max="$store.state.bgNaturalSize.h"
+        )
+        input.menu__window-button.textbox.px(
+          placeholder="px"
+          v-model.number.lazy="bgOffsetHeight"
+        )
 
       .menu__window-section-container
 
@@ -96,8 +104,30 @@ export default {
       },
       get () {
       }
-    }
+    },
     /* eslint-enable */
+    bgHeight: {
+      get () {
+        return this.$store.state.bgSize.h
+      },
+      set (value) {
+        this.$store.commit('setBgSize', {
+          w: this.$store.state.bgSize.w,
+          h: value
+        })
+      }
+    },
+    bgOffsetHeight: {
+      get () {
+        return this.$store.state.bgSize.h - 272
+      },
+      set (value) {
+        this.$store.commit('setBgSize', {
+          w: this.$store.state.bgSize.w,
+          h: Math.min(Math.max(value + 272, 556), this.$store.state.bgNaturalSize.h)
+        })
+      }
+    }
   }
 }
 </script>
@@ -240,6 +270,9 @@ export default {
     margin 0
 
 #urltextbox
+  color $color-white
+
+input.menu__window-button.textbox.px
   color $color-white
 
 .menu__window-scale__container

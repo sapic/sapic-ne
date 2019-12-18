@@ -18,6 +18,10 @@ export interface RootState {
     w: number
     h: number
   }
+  bgNaturalSize: {
+    w: number
+    h: number
+  }
   inventory: []
 }
 

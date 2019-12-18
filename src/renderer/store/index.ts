@@ -26,6 +26,10 @@ const state: RootState = {
     w: 0,
     h: 0
   },
+  bgNaturalSize: {
+    w: 0,
+    h: 0
+  },
   inventory: []
 }
 
@@ -87,6 +91,9 @@ export const store = new Vuex.Store({
     setBgSize (state, value) {
       state.bgSize = value
     },
+    setBgNaturalSize (state, value) {
+      state.bgNaturalSize = value
+    },
     setState (state, newState) {
       state = newState
     },
@@ -105,8 +112,8 @@ export const store = new Vuex.Store({
       const bgSaveInfo = {
         url: state.background,
         images: [
-          { name: 'Artwork_Middle.png', x: 508, y: 298, w: 506, h: 2000 },
-          { name: 'Artwork_Right_Top.png', x: 1022, y: 298, w: 100, h: 2000 },
+          { name: 'Artwork_Middle.png', x: 508, y: 298, w: 506, h: state.bgSize.h - 300 },
+          { name: 'Artwork_Right_Top.png', x: 1022, y: 298, w: 100, h: state.bgSize.h - 300 },
           { name: 'Avatar.png', x: 499, y: 34, w: 164, h: 164 }
         ]
       }
