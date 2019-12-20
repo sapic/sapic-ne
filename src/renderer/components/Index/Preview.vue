@@ -47,10 +47,7 @@
                             // <img width="100%" style="max-width: 100px;" :src="$store.state.background">
                         .screenshot_showcase_smallscreenshot.screenshot_count
                           .screenshot_showcase_screenshot
-  .bgPreloader(:style="{\
-  position: 'fixed',\
-  opacity: 0\
-  }")
+  .bgPreloader
     img(:src='background.steamUrl', v-for='background in nextBackgrounds', v-bind:key='background.url')
     img(:src='$store.state.background', ref='currentBgHolder', @load='imageUpdated')
 
@@ -316,5 +313,11 @@ div
     bottom 0
     left 0
     z-index 0
+
+.bgPreloader
+  position: 'fixed'
+  opacity: 0
+  display: none
+
 </style>
 <style scoped src="@/assets/css/motiva_sans.css"></style>

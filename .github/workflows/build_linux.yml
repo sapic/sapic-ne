@@ -1,0 +1,43 @@
+name: Build Linux and Upload
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Add Build Tools
+        run: yarn global add build-tools
+      - name: Yarn Install
+        run: yarn install --frozen-lockfile
+      - name: Build
+        run: yarn build:dir
+      - name: Download Steamworks SDK
+        run: git clone https://github.com/TrueCarry/stmwrkssdk sdk
+      - name: Place sentry
+        run: |
+          mkdir -p ~/Steam
+          echo "${{ secrets.STEAM_SENTRY_CONTENT }}" | base64 -d > ~/Steam/${{ secrets.STEAM_SENTRY_NAME }}
+          chmod +x ./sdk/sdk/tools/ContentBuilder/builder_linux/steamcmd.sh
+          chmod +x ./sdk/sdk/tools/ContentBuilder/builder_linux/linux32/steamcmd
+          chmod +x ./sdk/sdk/tools/ContentBuilder/builder_linux/linux32/libstdc++.so.6
+          chmod +x ./sdk/sdk/tools/ContentBuilder/builder_linux/linux32/crashhandler.so
+      - name: Update description
+        run: sed -i -e "s|{{desc}}|$GITHUB_REF - $GITHUB_SHA - linux|g" ./steam_build/scripts/app_build_853520_linux.vdf
+        shell: bash
+      - name: Build SteamDepot
+        run: |
+          ./sdk/sdk/tools/ContentBuilder/builder_linux/steamcmd.sh +login ${{ secrets.STEAM_LOGIN }} ${{ secrets.STEAM_PASSWORD }} +run_app_build ../../../../../steam_build/scripts/app_build_853520_linux.vdf +exit || true
+        shell: bash

@@ -28,12 +28,12 @@
         opacity 0
         transition all 0.25s ease-in-out
         .inventory-item
-          margin 5px
+          margin 2px
           float left
           width 98px
           height 98px
           cursor pointer
-          background url(https://steamcommunity-a.akamaihd.net/public/images/economy/trade_itemholder.png)
+          background-color $color-button
           background-position top
           background-repeat no-repeat
           .inventory-item-inner
